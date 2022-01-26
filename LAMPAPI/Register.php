@@ -1,5 +1,5 @@
 <?php
-  $mysqli = new mysqli("localhost","Student","studyhard","COP4331");
+  $mysqli = new mysqli("localhost","student","studyhard","COP4331");
   $inData = getRequestInfo();
 
   $login = $inData['login'];
