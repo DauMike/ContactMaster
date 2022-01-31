@@ -1,8 +1,13 @@
 <?php
+	include 'Functions.php';
+
 	$inData = getRequestInfo();
 	
-	$color = $inData["color"];
-	$userId = $inData["userId"];
+	$UserID = $inData["userid"];
+	$FirstName = $inData["firstname"];
+	$LastName = $inData["lastname"];
+	$Email = $inData["email"];
+	$Phone = $inData["phone"];
 
 	$conn = new mysqli("localhost", "student", "studyhard", "COP4331");
 	if ($conn->connect_error) 
@@ -11,29 +16,12 @@
 	} 
 	else
 	{
-		$stmt = $conn->prepare("INSERT into Colors (UserId,Name) VALUES(?,?)");
-		$stmt->bind_param("ss", $userId, $color);
+		$stmt = $conn->prepare("INSERT INTO Contacts (FirstName, LastName, Email, Phone, UserID) VALUES (?,?,?,?,?);");
+		$stmt->bind_param("sssss", $FirstName, $LastName, $Email, $Phone, $UserID);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();
-		returnWithError("");
+		echo json_encode("Contact created! Please Enjoy!");
 	}
 
-	function getRequestInfo()
-	{
-		return json_decode(file_get_contents('php://input'), true);
-	}
-
-	function sendResultInfoAsJson( $obj )
-	{
-		header('Content-type: application/json');
-		echo $obj;
-	}
-	
-	function returnWithError( $err )
-	{
-		$retValue = '{"error":"' . $err . '"}';
-		sendResultInfoAsJson( $retValue );
-	}
-	
 ?>
