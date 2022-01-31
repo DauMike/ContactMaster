@@ -1,5 +1,4 @@
 <?php
-
 include 'Functions.php';
 
 $mysqli = new mysqli("localhost","student","studyhard","COP4331");
@@ -20,7 +19,7 @@ else
 {
 	// Perform query
 	if ($result = $mysqli->query("SELECT * FROM Users WHERE Login='$login';")) 
-    	{
+  {
 		if($result->num_rows > 0)
 		{
 			returnWithError("Username exists already! Please select another one!");
