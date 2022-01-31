@@ -1,5 +1,70 @@
-<html>
-	<body>
-		<h1>test</h1>
-	</body>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page </title>
+  <script type="text/javascript" src="js/md5.js"></script>
+  <script type="text/javascript" src="js/code.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+<link href="css/style.css" rel="stylesheet" >
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1>Welcome To Contact Depot</h1>
+		<h2>The World's Best Contact Manager</h2>
+		<p>You can easily save, edit, delete and manage all your contacts within our website. Thanks for visiting us! </p>
+	
+		</div>
+	</div>
+	
+	
+		<div class="right">
+		<h5>Login</h5>
+		<p>Don't have an account? <a href="register.html" target="_blank">Create Your Account</a> It takes less than a minute.</p>
+		
+		<!---"onclick="myFunction();"--->
+
+		<div class="inputs">
+			<!--<label for="loginName"><b>Username</b></label>
+			<br>
+			<b>Username</b>-->
+			<input type="text" id="loginName" name="loginName" placeholder="username">
+			<br>
+			
+			<!--<label for="password"><b>Password</b></label>
+			<br>
+			<b>Password</b>-->
+			<input type="password" id="loginPassword" name="loginPassword" placeholder="password">
+		</div>
+			
+			<br><br>
+			
+		<div class="remember-me--forgot-password">
+				<!-- Angular -->
+	<!--			
+	<label>
+		<input type="checkbox" name="item" checked/>
+		<span class="text-checkbox">Remember me</span>
+	</label>
+	-->
+			<p>forgot password?</p>
+		</div>
+			
+			<br>
+			
+			<button type="button" id="loginButton" class="buttons" onclick="doLogin();">Login</button>
+			<br>
+			<span id="loginResult"></span>
+	</div>
+	
+</div>
+<!-- partial -->
+  
+</body>
 </html>
