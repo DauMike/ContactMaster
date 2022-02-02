@@ -238,3 +238,8 @@ function searchContact()
 	}
 	
 }
+
+function wrapperFunction() {
+	addUser();
+	window.location.href = 'index.html';
+ }
