@@ -159,7 +159,7 @@ function addUser()
 	let tmp = {firstname:newFirstName, lastname:newLastName, login:newLogin, password:newPassword};
 	let jsonPayload = JSON.stringify(tmp);
 
-	let url = urlBase + '/AddUser.' + extension;
+	let url = urlBase + '/Register.' + extension;
 
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -183,7 +183,7 @@ function addUser()
 				{
 					document.getElementById("newUserResult").innerHTML = "User Created";
 				}
-				window.location.href = "index.html";
+				window.location.href = "register.html";
 			}
 		};
 		xhr.send(jsonPayload);

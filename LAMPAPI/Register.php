@@ -18,12 +18,12 @@ if ($mysqli->connect_error)
 else
 {
 	// Perform query
-	if ($result = $mysqli->query("SELECT * FROM Users WHERE Login='$login';")) 
-  {
+	if ($result = $mysqli->query("SELECT * FROM Users WHERE Login='$Login';")) 
+  	{
 		if($result->num_rows > 0)
 		{
 			returnWithError("Username exists already! Please select another one!");
-      		}
+      	}
 		else
 		{
 			$stmt = $mysqli->prepare("INSERT INTO Users (FirstName, LastName, Login, Password) VALUES (?, ?, ?, ?);");

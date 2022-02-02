@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -11,46 +12,42 @@
 </head>
 
 <body>
-  <div class="box-form">
-    <div class="left">
-      <div class="overlay">
-        <h1>Welcome To Contact Depot</h1>
-        <h2>Create your new account today!</h2>
+    <div class="box-form">
+      <div class="left">
+        <div class="overlay">
+          <h1>Welcome To Contact Depot</h1>
+          <h2>Create your new account today!</h2>
+        </div>
+      </div>
+  
+      <div class="right">
+        <h5>Register</h5>
+        <p>Already have an account? <a href="index.html">Login</a> </p>
+        
+        <div class="inputs">
+          <b>Please fill out the form below.</b>
+          <input type="text" id="firstname" name="firstname" placeholder="first name">
+          <br>
+          <input type="text" id="lastname" name="lastname" placeholder="last name">
+          <br>
+          <input type="text" id="login" name="login" placeholder="username">
+          <br>
+          <input type="password" id="password" name="password" placeholder="password">
+        </div>
+    
+        <div>
+          <br><br>
+          <button type="button" id="newUserButton" class="buttons" onclick="addUser();">Submit</button>
+          <br>
+          <span id="newUserResult"></span>
+        </div>
       </div>
     </div>
-
-    <div class="right">
-      <h5>Register</h5>
-      <p>Already have an account? <a href="index.html">Login</a> </p>
-  
-      <div class="inputs">
-        <b>Please fill out the form below.</b>
-        <input type="text" id="firstname" name="firstname" placeholder="first name">
-        <br>
-        <input type="text" id="lastname" name="lastname" placeholder="last name">
-        <br>
-        <input type="text" id="login" name="login" placeholder="username">
-        <br>
-        <input type="password" id="password" name="password" placeholder="password">
-    </div>
-
-    <div>
-      <br><br>
-			
-			<button type="button" id="newUserButton" class="buttons" onclick="addUser();">Submit</button>
-			<br>
-			<span id="newUserResult"></span>
-    </div>
-
-    </div>
-  </div>
-
 </body>
 
 </html>
 
-<!---function addUser()
-<form register="Register.php"></form>-->
+<!--<form register="Register.php"></form>-->
   
 <!--
 <div class="form-popup" id="registration">
@@ -60,3 +57,4 @@
   </form>
 </div>
 -->
+
