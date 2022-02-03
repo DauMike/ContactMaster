@@ -93,7 +93,7 @@ function readCookie()
 	}
 	else
 	{
-		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
+		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName + userId;
 	}
 }
 
@@ -185,17 +185,6 @@ function addContact()
 }
 */
 
-
-/*
-function openSignUp() {
-	document.getElementById("signUp").style.display = "block";
-  }
-  
-  function closeForm() {
-	document.getElementById("signUp").style.display = "none";
-  }
-*/
-
 function addUser()
 {
 	let newFirstName = document.getElementById("firstname").value;
@@ -253,7 +242,7 @@ function searchContact()
 	let tmp = {search:srch,userId:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
-	let url = urlBase + '/SearchContacts.' + extension;
+	let url = urlBase + '/Search.' + extension;
 	
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -289,7 +278,20 @@ function searchContact()
 }
 
 function deleteContact() {
-	//let contact = document.getElementById("contactText").value;
+	// get phone number
+	let phn = document.getElementById("phoneText").value;
+
+	document.getElementById("contactDeleteResult").innerHTML = "";
+
+	let tmp = {phone:phn,userId:userId};
+	let jsonPayload = JSON.stringify( tmp );
+
+	let url = urlBase + '/Delete.' + extension;
+
+	// search by phone number
+
+	// delete contact
+
 }
 
 function wrapperFunction() {
