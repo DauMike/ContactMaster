@@ -508,13 +508,13 @@ $(document).ready(function(){
                         <p>Enter the number of the contact to be deleted</p>
                          <div class="form-group">
                             <label>10 Digit Phone Number</label>
-                            <input type="tel" id="phoneNumberDelete" class="form-control" placeholder="(123)-456-7890" pattern="[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}" required>
+                            <input type="tel" id="phoneText" class="form-control" placeholder="(123)-456-7890" pattern="[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}" required>
                         </div>
                         <p class="text-warning"><small>This action cannot be undone.</small></p>
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="button" class="btn btn-danger" onclick="deleteContact()" value="Delete">
+                        <input type="submit" class="btn btn-danger" onclick="deleteContact()" value="Delete">
 					</div>
 				</form>
 			</div>
