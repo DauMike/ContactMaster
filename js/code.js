@@ -147,7 +147,7 @@ function addContact()
 
 	document.getElementById("newContactResult").innerHTML = "";
 
-	let tmp = {firstname:firstName, lastname:lastName, email:email, phone:phoneNumber, userid:1};
+	let tmp = {firstname:firstName, lastname:lastName, email:email, phone:phoneNumber, userid:userId};
 	let jsonPayload = JSON.stringify(tmp);
 
 	let url = urlBase + '/Add.' + extension;
@@ -308,7 +308,7 @@ function wrapperFunction() {
 
 	document.getElementById("editResult").innerHTML = "";
 
-	let tmp = {firstname:newFirstName, lastname:newLastName, email:newEmail, phone:phonenumber, userid:1}
+	let tmp = {firstname:newFirstName, lastname:newLastName, email:newEmail, phone:phonenumber, userid:userId}
 	let jsonPayload = JSON.stringify( tmp );
 	
 	let url = urlBase + '/Update.' + extension;
