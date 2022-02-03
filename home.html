@@ -483,6 +483,7 @@ $(document).ready(function(){
 						<div class="form-group">
 							<label>Phone</label>
 							<input type="tel" id="phoneNumber" class="form-control" placeholder="(123)-456-7890" pattern="[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}" required>
+							<p class="text-warning"><small>Phone numbers cannot be edited, instead a new contact must be created</small></p>
 						</div>					
 					</div>
 					<div class="modal-footer">
@@ -507,7 +508,7 @@ $(document).ready(function(){
                         <p>Enter the number of the contact to be deleted</p>
                          <div class="form-group">
                             <label>10 Digit Phone Number</label>
-                            <input type="text" id="phonenumber" class="form-control" placeholder="xxxxxxxxxx" required>
+                            <input type="tel" id="phoneNumberDelete" class="form-control" placeholder="(123)-456-7890" pattern="[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}" required>
                         </div>
                         <p class="text-warning"><small>This action cannot be undone.</small></p>
                     </div>
@@ -549,7 +550,7 @@ $(document).ready(function(){
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                    <input type="submit" class="btn btn-info" value="Search">
+                    <input type="submit" class="btn btn-info" onclick="searchContact()" value="Search">
                 </div>
             </form>
         </div>
