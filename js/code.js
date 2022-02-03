@@ -239,7 +239,25 @@ function searchContact()
 	
 }
 
+function deleteContact() {
+	//let contact = document.getElementById("contactText").value;
+}
+
 function wrapperFunction() {
 	addUser();
 	window.location.href = 'index.html';
+ }
+
+ function phonenumberDelete(inputtxt)
+{
+  var phoneno = /^\d{10}$/;
+  document.getElementById("numberResult").innerHTML = "";
+  if(inputtxt.value.match(phoneno))
+  {
+      deleteContact();
+  }
+  else
+  {
+  	document.getElementById("numberResult").innerHTML = "Incorrect phone format. Please write 10 digits with no spaces.";
+  }
  }
