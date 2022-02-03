@@ -138,6 +138,55 @@ function addContact()
 }
 
 /*
+function addContact()
+{
+	let firstName = document.getElementById("newContactFirstName").value;
+	let lastName = document.getElementById("newContactLastName").value;
+	let email = document.getElementById("newContactEmail").value;
+	let phoneNumber = document.getElementById("newContactPhoneNumber").value;
+
+	document.getElementById("newContactResult").innerHTML = "";
+
+	let tmp = {firstname:firstName, lastname:lastName, email:email, phone:phoneNumber, userid:1};
+	let jsonPayload = JSON.stringify(tmp);
+
+	let url = urlBase + '/Add.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try
+	{
+		xhr.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				let jsonObject = JSON.parse( xhr.responseText );
+				userId = jsonObject.id;
+
+				if(userId < 1)
+				{
+					document.getElementById("newContactResult").innerHTML = "User Already Exist";
+					return;
+				}
+				else
+				{
+					document.getElementById("newContactResult").innerHTML = "Contact Added";
+				}
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("newContactResult").innerHTML = err.message;
+	}
+}
+*/
+
+
+/*
 function openSignUp() {
 	document.getElementById("signUp").style.display = "block";
   }
@@ -257,7 +306,7 @@ function wrapperFunction() {
 
 	document.getElementById("editResult").innerHTML = "";
 
-	let tmp = {firstname:newFirstName,lastname:newLastName,email:newEmail,phone:phonenumber,userid:1}
+	let tmp = {firstname:newFirstName, lastname:newLastName, email:newEmail, phone:phonenumber, userid:1}
 	let jsonPayload = JSON.stringify( tmp );
 	
 	let url = urlBase + '/Update.' + extension;
