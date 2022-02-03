@@ -12,6 +12,12 @@
 <script type="text/javascript" src="js/code.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function() 
+	{
+		readCookie();
+	}, false);
+</script>
 <style>
     body {
         background-image: linear-gradient(135deg, #f984ff 10%, #1505a0 100%);
@@ -271,6 +277,8 @@ $(document).ready(function(){
 					<div class="row">
 						<div class="col-xs-6">
 							<h2><b>Manage Contacts</b></h2>
+							
+							
 						</div>
 						<div class="col-xs-6">
 							<a href="#addContact" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Contact</span></a>
