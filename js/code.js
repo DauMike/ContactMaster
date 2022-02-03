@@ -248,16 +248,45 @@ function wrapperFunction() {
 	window.location.href = 'index.html';
  }
 
- function phonenumberDelete(inputtxt)
-{
-  var phoneno = /^\d{10}$/;
-  document.getElementById("numberResult").innerHTML = "";
-  if(inputtxt.value.match(phoneno))
-  {
-      deleteContact();
-  }
-  else
-  {
-  	document.getElementById("numberResult").innerHTML = "Incorrect phone format. Please write 10 digits with no spaces.";
-  }
+ function editContact()
+ {
+	let newFirstName = document.getElementById("firstName").value;
+	let newLastName = document.getElementById("lastName").value;
+	let newEmail = document.getElementById("email").value;
+	let phonenumber = document.getElementById("phoneNumber").value;
+
+	document.getElementById("editResult").innerHTML = "";
+
+	let tmp = {firstname:newFirstName,lastname:newLastName,email:newEmail,phone:phonenumber,userid:1}
+	let jsonPayload = JSON.stringify( tmp );
+	
+	let url = urlBase + '/Update.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse( xhr.responseText );
+				userId = jsonObject.id;
+		
+				if( userId < 1 )
+				{		
+					document.getElementById("editResult").innerHTML = "Contact Does Not Exist";
+					return;
+				}
+				document.getElementById("editResult").innerHTML = "Contact Update Successful";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("editResult").innerHTML = err.message;
+	}
  }
