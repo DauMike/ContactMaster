@@ -177,17 +177,11 @@ function addContact()
 				{
 					alert("you have succeeded, forreal");
 					document.getElementById("newContactResult").innerHTML = "Contact Added";
+					document.getElementById("newContactFirstName").innerHTML = "";
+					document.getElementById("newContactLastName").innerHTML = "";
+					document.getElementById("newContactEmail").innerHTML = "";
+					document.getElementById("newContactPhoneNumber").innerHTML = "";
 				}
-				/*
-				if(userId < 1)
-				{
-					document.getElementById("newContactResult").innerHTML = "User Already Exist";
-					return;
-				}
-				else
-				{
-					document.getElementById("newContactResult").innerHTML = "Contact Added";
-				}*/
 			}
 		};
 		xhr.send(jsonPayload);
