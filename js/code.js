@@ -145,10 +145,20 @@ function addContact()
 	let email = document.getElementById("newContactEmail").value;
 	let phoneNumber = document.getElementById("newContactPhoneNumber").value;
 
-	if(firstName === "" || lastName === "" || email === "" || phoneNumber != "[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}")
+	if(firstName === "" || lastName === "" || email === "")
 	{
 		alert("you messed up");
 		return;
+	}
+
+	var phoneRegEx = "[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}";
+	if(phoneNumber.value.match(phoneRegEx))
+	{
+
+	}
+	else
+	{
+		alert("wreong phoneey");
 	}
 
 	document.getElementById("newContactResult").innerHTML = "";
