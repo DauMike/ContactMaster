@@ -147,8 +147,18 @@ function addContact()
 
 	if(firstName == "" || lastName == "" || email == "" || phoneNumber == "")
 	{
-		alert("you messed up");
+		alert("you have empty fields");
 		return;
+	}
+
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if(email.value.match(mailformat))
+	{
+		alert("this is a valid email");
+	}
+	else
+	{
+		alert("this is not a valid email");
 	}
 
 	document.getElementById("newContactResult").innerHTML = "";
