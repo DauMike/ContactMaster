@@ -170,8 +170,9 @@ function addContact()
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				let resultAdd = jsonObject.match("create");
+				alert(jsonObject);
 
-				if(resultAdd === null)
+				if(resultAdd == null)
 				{
 					document.getElementById("newContactResult").innerHTML = "User Already Exist";
 					return;
