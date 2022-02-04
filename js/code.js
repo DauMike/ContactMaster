@@ -144,7 +144,7 @@ function addContact()
 	{
 		return;
 	}
-	
+	console.log(newContactFirstName,newContactLastName,newContactEmail,newContactPhoneNumber);
 	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 	if(!newContactEmail.value.match(mailformat))
 	{
