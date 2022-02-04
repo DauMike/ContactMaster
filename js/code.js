@@ -152,13 +152,13 @@ function addContact()
 	}
 
 	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-	if(newContactEmail.value.match(mailformat))
+	if(!newContactEmail.value.match(mailformat))
 	{
-		alert("this is a valid email");
+		alert("this is not a valid email");
 	}
 	else
 	{
-		alert("this is not a valid email");
+		alert("this is a valid email");
 	}
 
 	document.getElementById("newContactResult").innerHTML = "";
