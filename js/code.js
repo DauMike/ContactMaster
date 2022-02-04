@@ -177,7 +177,7 @@ function addContact()
 			}
 		};
 		xhr.send(jsonPayload);
-		window.location.href = "home.html";
+	//	window.location.href = "home.html";
 	}
 	catch(err)
 	{
