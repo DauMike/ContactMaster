@@ -140,21 +140,10 @@ function addContact()
 
 function addContact()
 {
-/*	if(newContactFirstName == "" || newContactLastName == "" || newContactEmail == "" || newContactPhoneNumber == "")
+	if(newContactFirstName == "" || newContactLastName == "" || newContactEmail == "" || newContactPhoneNumber == "")
 	{
 		return;
 	}
-	console.log(newContactFirstName.value,newContactLastName.value,newContactEmail.value,newContactPhoneNumber.value);
-	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-	if(!newContactEmail.value.match(mailformat))
-	{
-		return;
-	}
-	var phoneRegEx = /^[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}+$/;
-	if(!newContactPhoneNumber.value.match(phoneRegEx))
-	{
-		return;
-	}*/
 
 	let firstName = document.getElementById("newContactFirstName").value;
 	let lastName = document.getElementById("newContactLastName").value;
@@ -180,7 +169,7 @@ function addContact()
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				let resultAdd = jsonObject.match("create");
-				alert(jsonObject);
+			//	alert(jsonObject);
 
 				if(resultAdd == null)
 				{
@@ -325,7 +314,7 @@ function wrapperFunction() {
 
 	document.getElementById("editResult").innerHTML = "";
 
-	let tmp = {firstname:newFirstName, lastname:newLastName, email:newEmail, phone:phonenumber, userid:userId}
+	let tmp = {userid:userId, firstname:newFirstName, lastname:newLastName, email:newEmail, phone:phonenumber}
 	let jsonPayload = JSON.stringify( tmp );
 	
 	let url = urlBase + '/Update.' + extension;
@@ -342,6 +331,7 @@ function wrapperFunction() {
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				let resultEdit = jsonObject.match("update");
+				alert(jsonObject);
 
 				if(resultEdit === null)
 				{
