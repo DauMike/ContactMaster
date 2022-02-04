@@ -150,11 +150,11 @@ function addContact()
 	{
 		return;
 	}
-	var phoneRegEx = /^[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}+$/;
+/*	var phoneRegEx = /^[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}+$/;
 	if(!newContactPhoneNumber.value.match(phoneRegEx))
 	{
 		return;
-	}
+	}*/
 
 	let firstName = document.getElementById("newContactFirstName").value;
 	let lastName = document.getElementById("newContactLastName").value;
