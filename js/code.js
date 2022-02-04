@@ -144,7 +144,7 @@ function addContact()
 	{
 		return;
 	}
-	/*
+	
 	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 	if(!newContactEmail.value.match(mailformat))
 	{
@@ -154,7 +154,7 @@ function addContact()
 	if(!newContactPhoneNumber.value.match(phoneRegEx))
 	{
 		return;
-	}*/
+	}
 
 	let firstName = document.getElementById("newContactFirstName").value;
 	let lastName = document.getElementById("newContactLastName").value;
