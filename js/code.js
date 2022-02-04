@@ -145,7 +145,7 @@ function addContact()
 	let email = document.getElementById("newContactEmail").value;
 	let phoneNumber = document.getElementById("newContactPhoneNumber").value;
 
-	console.log(firstName,lastName,email,phoneNumber);
+	console.log(firstName,lastName,email,phoneNumber,userId);
 	document.getElementById("newContactResult").innerHTML = "";
 
 	let tmp = {userid:userId, firstname:firstName, lastname:lastName, email:email, phone:phoneNumber};
