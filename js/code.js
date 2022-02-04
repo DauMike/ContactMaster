@@ -145,7 +145,6 @@ function addContact()
 	let email = document.getElementById("newContactEmail").value;
 	let phoneNumber = document.getElementById("newContactPhoneNumber").value;
 
-	console.log(firstName,lastName,email,phoneNumber,userId);
 	document.getElementById("newContactResult").innerHTML = "";
 
 	let tmp = {userid:userId, firstname:firstName, lastname:lastName, email:email, phone:phoneNumber};
@@ -164,6 +163,7 @@ function addContact()
 			if (this.readyState == 4 && this.status == 200)
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
+				console.log(jsonObject);
 
 				userId = jsonObject.id;
 
