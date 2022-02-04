@@ -164,11 +164,21 @@ function addContact()
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				console.log(jsonObject);
-				let result = jsonObject.match("lol");
+				let result = jsonObject.match("create");
 				console.log(result);
 
-				userId = jsonObject.id;
-
+				if(result === null)
+				{
+					alert("you have succeeded, but also failed");
+					document.getElementById("newContactResult").innerHTML = "User Already Exist";
+					return;
+				}
+				else
+				{
+					alert("you have succeeded, forreal");
+					document.getElementById("newContactResult").innerHTML = "Contact Added";
+				}
+				/*
 				if(userId < 1)
 				{
 					document.getElementById("newContactResult").innerHTML = "User Already Exist";
@@ -177,7 +187,7 @@ function addContact()
 				else
 				{
 					document.getElementById("newContactResult").innerHTML = "Contact Added";
-				}
+				}*/
 			}
 		};
 		xhr.send(jsonPayload);
