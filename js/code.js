@@ -140,12 +140,7 @@ function addContact()
 
 function addContact()
 {
-	let firstName = document.getElementById("newContactFirstName").value;
-	let lastName = document.getElementById("newContactLastName").value;
-	let email = document.getElementById("newContactEmail").value;
-	let phoneNumber = document.getElementById("newContactPhoneNumber").value;
-
-	if(firstName == "" || lastName == "" || email == "" || phoneNumber == "")
+	if(newContactFirstName == "" || newContactLastName == "" || newContactEmail == "" || newContactPhoneNumber == "")
 	{
 		alert("you have empty fields");
 		return;
@@ -155,11 +150,25 @@ function addContact()
 	if(!newContactEmail.value.match(mailformat))
 	{
 		alert("this is not a valid email");
+		return;
+	}
+
+	var phoneRegEx = /^[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}+$/;
+	if(!newContactPhoneNumber.value.match(phoneRegEx))
+	{
+		alert("this is not a valid number");
+		return;
 	}
 	else
 	{
-		alert("this is a valid email");
+		alert("this is a valid number");
 	}
+
+
+	let firstName = document.getElementById("newContactFirstName").value;
+	let lastName = document.getElementById("newContactLastName").value;
+	let email = document.getElementById("newContactEmail").value;
+	let phoneNumber = document.getElementById("newContactPhoneNumber").value;
 
 	document.getElementById("newContactResult").innerHTML = "";
 
