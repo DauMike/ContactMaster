@@ -163,28 +163,21 @@ function addContact()
 			if (this.readyState == 4 && this.status == 200)
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
-				console.log(jsonObject);
 				let result = jsonObject.match("create");
-				console.log(result);
 
 				if(result === null)
 				{
-					alert("you have succeeded, but also failed");
 					document.getElementById("newContactResult").innerHTML = "User Already Exist";
 					return;
 				}
 				else
 				{
-					alert("you have succeeded, forreal");
 					document.getElementById("newContactResult").innerHTML = "Contact Added";
-					document.getElementById("newContactFirstName").innerHTML = "";
-					document.getElementById("newContactLastName").innerHTML = "";
-					document.getElementById("newContactEmail").innerHTML = "";
-					document.getElementById("newContactPhoneNumber").innerHTML = "";
 				}
 			}
 		};
 		xhr.send(jsonPayload);
+		window.location.href = "home.html";
 	}
 	catch(err)
 	{
