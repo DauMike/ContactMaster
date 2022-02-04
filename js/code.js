@@ -145,7 +145,7 @@ function addContact()
 	let email = document.getElementById("newContactEmail").value;
 	let phoneNumber = document.getElementById("newContactPhoneNumber").value;
 
-	if(firstName === "" || lastName === "" || email === "")
+	if(firstName == "" || lastName == "" || email == "" || phoneNumber == "")
 	{
 		alert("you messed up");
 		return;
