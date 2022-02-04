@@ -137,7 +137,7 @@ function addContact()
 	
 }
 
-/*
+
 function addContact()
 {
 	let firstName = document.getElementById("newContactFirstName").value;
@@ -145,9 +145,10 @@ function addContact()
 	let email = document.getElementById("newContactEmail").value;
 	let phoneNumber = document.getElementById("newContactPhoneNumber").value;
 
+	console.log(firstName,lastName,email,phoneNumber);
 	document.getElementById("newContactResult").innerHTML = "";
 
-	let tmp = {firstname:firstName, lastname:lastName, email:email, phone:phoneNumber, userid:userId};
+	let tmp = {userid:userId, firstname:firstName, lastname:lastName, email:email, phone:phoneNumber};
 	let jsonPayload = JSON.stringify(tmp);
 
 	let url = urlBase + '/Add.' + extension;
@@ -163,6 +164,7 @@ function addContact()
 			if (this.readyState == 4 && this.status == 200)
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
+
 				userId = jsonObject.id;
 
 				if(userId < 1)
@@ -183,7 +185,7 @@ function addContact()
 		document.getElementById("newContactResult").innerHTML = err.message;
 	}
 }
-*/
+
 
 function addUser()
 {
