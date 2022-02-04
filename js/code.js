@@ -305,7 +305,7 @@ function deleteContact() {
 
 	document.getElementById("contactDeleteResult").innerHTML = "";
 
-	let tmp = {Phone:phn,UserID:userId};
+	let tmp = {phone:phn,userid:userId};
 	alert(phn);
 	let jsonPayload = JSON.stringify( tmp );
 
