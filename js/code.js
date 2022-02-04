@@ -154,7 +154,7 @@ function addContact()
 	var phoneRegEx = "[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}";
 	if(phoneNumber.value.match(phoneRegEx))
 	{
-
+		alert("hooray");
 	}
 	else
 	{
