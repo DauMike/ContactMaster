@@ -163,9 +163,9 @@ function addContact()
 			if (this.readyState == 4 && this.status == 200)
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
-				let result = jsonObject.match("create");
+				let resultAdd = jsonObject.match("create");
 
-				if(result === null)
+				if(resultAdd === null)
 				{
 					document.getElementById("newContactResult").innerHTML = "User Already Exist";
 					return;
@@ -177,7 +177,6 @@ function addContact()
 			}
 		};
 		xhr.send(jsonPayload);
-	//	window.location.href = "home.html";
 	}
 	catch(err)
 	{
@@ -325,14 +324,19 @@ function wrapperFunction() {
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
-				userId = jsonObject.id;
-		
-				if( userId < 1 )
-				{		
+				let resultEdit = jsonObject.match("update");
+
+				if(resultEdit === null)
+				{
+					alert("User does not exists");
 					document.getElementById("editResult").innerHTML = "Contact Does Not Exist";
 					return;
 				}
-				document.getElementById("editResult").innerHTML = "Contact Update Successful";
+				else
+				{
+					alert("Update Baybee");
+					document.getElementById("editResult").innerHTML = "Contact Update Successful";
+				}
 			}
 		};
 		xhr.send(jsonPayload);
