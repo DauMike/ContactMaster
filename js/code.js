@@ -140,7 +140,7 @@ function addContact()
 
 function addContact()
 {
-	if(newContactFirstName == "" || newContactLastName == "" || newContactEmail == "" || newContactPhoneNumber == "")
+/*	if(newContactFirstName == "" || newContactLastName == "" || newContactEmail == "" || newContactPhoneNumber == "")
 	{
 		return;
 	}
@@ -150,7 +150,7 @@ function addContact()
 	{
 		return;
 	}
-/*	var phoneRegEx = /^[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}+$/;
+	var phoneRegEx = /^[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}+$/;
 	if(!newContactPhoneNumber.value.match(phoneRegEx))
 	{
 		return;
