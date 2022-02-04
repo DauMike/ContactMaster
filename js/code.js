@@ -152,7 +152,7 @@ function addContact()
 	}
 
 	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-	if(email.value.match(mailformat))
+	if(newContactEmail.value.match(mailformat))
 	{
 		alert("this is a valid email");
 	}
