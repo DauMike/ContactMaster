@@ -164,7 +164,7 @@ function addContact()
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				console.log(jsonObject);
-				let result = jsonObject.match("create");
+				let result = jsonObject.match("lol");
 				console.log(result);
 
 				userId = jsonObject.id;
