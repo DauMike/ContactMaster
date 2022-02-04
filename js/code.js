@@ -282,14 +282,14 @@ function searchContact()
 	}
 	
 }
-
+/*
 function deleteContact() {
 	// get phone number
 	let phn = document.getElementById("phoneText").value;
 
 	document.getElementById("contactDeleteResult").innerHTML = "";
 
-	let tmp = {phone:phn,userId:userId};
+	let tmp = {Phone:phn,UserID:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/Delete.' + extension;
@@ -298,6 +298,51 @@ function deleteContact() {
 
 	// delete contact
 
+}*/
+
+function deleteContact() {
+	let phn = document.getElementById("phoneText").value;
+
+	document.getElementById("contactDeleteResult").innerHTML = "";
+
+	let tmp = {Phone:phn,UserID:userId};
+	let jsonPayload = JSON.stringify( tmp );
+
+	let url = urlBase + '/Delete.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse( xhr.responseText );
+				let resultDelete = jsonObject.match("delete");
+				alert(jsonObject);
+
+				if(resultDelete == null)
+				{
+					alert("No deletion happened");
+					document.getElementById("contactDeleteResult").innerHTML = "Contact Does Not Exist";
+					return;
+				}
+				else
+				{
+					alert("Termination successful");
+					document.getElementById("contactDeleteResult").innerHTML = "Deletion Successful";
+				}
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("contactDeleteResult").innerHTML = err.message;
+	}
 }
 
 function wrapperFunction() {
@@ -331,17 +376,15 @@ function wrapperFunction() {
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				let resultEdit = jsonObject.match("update");
-				alert(jsonObject);
+			//	alert(jsonObject);
 
 				if(resultEdit === null)
 				{
-					alert("User does not exists");
 					document.getElementById("editResult").innerHTML = "Contact Does Not Exist";
 					return;
 				}
 				else
 				{
-					alert("Update Baybee");
 					document.getElementById("editResult").innerHTML = "Contact Update Successful";
 				}
 			}
