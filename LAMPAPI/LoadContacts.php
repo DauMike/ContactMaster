@@ -4,8 +4,6 @@ include 'Functions.php';
 
 $inData = getRequestInfo();
 
-$UserID = $inData["userid"];
-
 $conn = new mysqli("localhost", "student", "studyhard", "COP4331");
 
 if($conn->connection_error)
@@ -14,15 +12,31 @@ if($conn->connection_error)
 }
 else
 {
-	$result = $conn->query("SELECT * FROM Contacts WHERE UserID ='$UserID';")
+//	$result = $conn->query("SELECT * FROM Contacts WHERE UserID ='$UserID';")
+   $stmt = $conn->prepare("SELECT FirstName, LastName, Email, Phone FROM Contacts WHERE UserId = ?");
+   $stmt->bind_param("s", $inData["userid"]);
+   $stmt->execute();
+   $result = $stmt->get_result();
 
-	while($rows=$result->fetch_assoc())
-                {
-             php echo $rows['FirstName'];
-             php echo $rows['LastName'];
-             php echo $rows['Email'];
-             php echo $rows['Phone'];
-                }
+   while($row = $result->fetch_assoc())
+   {
+       if( $searchCount > 0 )
+       {
+           $searchResults .= ",";
+       }
+       $searchCount++;
+       $searchResults .= '"'.$row["FirstName"] . ' ' . $row["LastName"] . ' ' . $row["Email"]. ' ' . $row["Phone"].'"';
+   }
 
-   $mysqli->close(); 
+    if( $searchCount == 0 )
+    {
+        returnWithinfo( "No Contacts" );
+    }
+    else
+    {
+        returnWithInfo( $searchResults );
+    }
+
+   $stmt->close();
+   $conn->close(); 
 ?>
