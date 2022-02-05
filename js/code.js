@@ -117,7 +117,7 @@ function loadContacts()
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 
-				while(xhr.responseText == "")
+				while(xhr.responseText != "")
 				{
 					let jsonObject = JSON.parse( xhr.responseText );
 					console.log(jsonObject);
