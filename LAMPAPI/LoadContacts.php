@@ -15,7 +15,7 @@ if($conn->connection_error)
 else
 {
 //	$result = $conn->query("SELECT * FROM Contacts WHERE UserID ='$UserID';")
-   $stmt = $conn->prepare("SELECT FirstName, LastName/*, Email, Phone*/ FROM Contacts WHERE CONCAT_WS(' ',FirstName,LastName) LIKE ? AND UserID=?");
+   $stmt = $conn->prepare("SELECT FirstName, LastName/*, Email, Phone*/ FROM Contacts WHERE UserID = ?");
    $stmt->bind_param("s", $inData["userid"]);
    $stmt->execute();
    $result = $stmt->get_result();
