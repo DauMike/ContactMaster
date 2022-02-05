@@ -4,6 +4,9 @@ include 'Functions.php';
 
 $inData = getRequestInfo();
 
+$searchResults = "";
+$searchCount = 0;
+
 $conn = new mysqli("localhost", "student", "studyhard", "COP4331");
 
 if($conn->connection_error)
@@ -13,7 +16,7 @@ if($conn->connection_error)
 else
 {
 //	$result = $conn->query("SELECT * FROM Contacts WHERE UserID ='$UserID';")
-   $stmt = $conn->prepare("SELECT FirstName, LastName, Email, Phone FROM Contacts WHERE UserId = ?");
+   $stmt = $conn->prepare("SELECT FirstName, LastName, Email, Phone FROM Contacts WHERE UserID = ?");
    $stmt->bind_param("s", $inData["userid"]);
    $stmt->execute();
    $result = $stmt->get_result();
