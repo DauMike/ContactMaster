@@ -1,7 +1,5 @@
 <?php
 
-//include 'Functions.php';
-
 $inData = getRequestInfo();
 
 $searchResults = "";
@@ -14,10 +12,11 @@ if($conn->connection_error)
 }
 else
 {
-//	$stmt = $conn->query("SELECT * FROM Contacts WHERE UserID = ?")
    $stmt = $conn->prepare("SELECT FirstName, LastName , Email, Phone FROM Contacts WHERE UserID = ?");
    $stmt->bind_param("s", $inData["userid"]);
    $stmt->execute();
+
+
    $result = $stmt->get_result();
 
    while($row = $result->fetch_assoc())
@@ -32,14 +31,14 @@ else
 
     if( $searchCount == 0 )
     {
-       returnWithInfo( "No Records Found" );
+       returnWithError( "No Records Found" );
     }
     else
     {
         returnWithInfo( $searchResults );
     }
 
-    stmt->close();
+    $stmt->close();
 
     $conn->close(); 
 }
