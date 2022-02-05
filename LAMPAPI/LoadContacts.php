@@ -73,8 +73,8 @@ function returnWithInfo( $searchResults )
 }  */
 function returnWithInfo( $firstName, $lastName, $Email, $Phone )
 {
-    $retValue = '{"firstname":' . $firstName . ',"lastname":"' . $lastName . '","Email":"' . $Email . '","Phone":"' . $Phone .'}';
- //   $retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
+    $retValue = '{"firstname":"' . $firstName . ',"lastname":"' . $lastName . '","Email":"' . $Email . '","Phone":"' . $Phone .'}';
+    $retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
     sendResultInfoAsJson( $retValue );
 } 
 ?>
