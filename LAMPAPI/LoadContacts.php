@@ -42,7 +42,7 @@ else
       returnWithInfo( $row['FirstName'], $row['LastName'], $row['Email'], $row['Phone']);
       $searchCount++;
     }
-    
+
     $stmt->close();
     $conn->close(); 
 }
@@ -64,11 +64,16 @@ function returnWithError( $err )
     $retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
     sendResultInfoAsJson( $retValue );
 }
-
+/*
 function returnWithInfo( $searchResults )
 {
     $retValue = '{"results":[' . $searchResults . ']}';
     sendResultInfoAsJson( $retValue );
 
-}   
+}  */
+function returnWithInfo( $firstName, $lastName, $Email, $Phone )
+{
+    $retValue = '{'. $firstName . $lastName . $Email . $Phone .'}';
+    sendResultInfoAsJson( $retValue );
+} 
 ?>
