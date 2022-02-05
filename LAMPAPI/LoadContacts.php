@@ -39,7 +39,7 @@ else
     }*/
     while($row = $result->fetch_assoc())
     {
-      returnWithInfo( $row['FirstName'], $row['LastName'], $row['Email'], $row['Phone'], $row['ID']);
+      returnWithInfo( $row['FirstName'], $row['LastName'], $row['Email'], $row['Phone'], $row['UserID']);
       $searchCount++;
     }
 
