@@ -117,8 +117,8 @@ function loadContacts()
 			{
 		//		let jsonObject = JSON.parse( xhr.responseText );
 				var data = xhr.responseText;
-				var jsonResponse = JSON.parse(data);
-				console.log(jsonResponse);
+				var jsonObject = JSON.parse(data);
+				console.log(jsonObject);
 				
 			//	firstName = jsonObject.firstName;
 
