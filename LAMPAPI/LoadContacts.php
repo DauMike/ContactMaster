@@ -1,6 +1,6 @@
 <?php
 
-//include 'Functions.php';
+include 'Functions.php';
 
 $inData = getRequestInfo();
 
@@ -44,7 +44,7 @@ else
     $conn->close(); 
 }
 
-
+/*
 function getRequestInfo()
 {
     return json_decode(file_get_contents('php://input'), true);
@@ -67,5 +67,5 @@ function returnWithInfo( $searchResults )
     $retValue = '{"results":[' . $searchResults . '],"error":""}';
     sendResultInfoAsJson( $retValue );
 
-}   
+}   */
 ?>
