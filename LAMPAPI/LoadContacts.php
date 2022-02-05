@@ -77,9 +77,7 @@ function returnWithInfo( $searchResults )
 }  */
 function returnWithInfo( $firstName, $lastName, $Email, $Phone)
 {
-    $retValue = '{"results":[ "firstname":"' . $firstName . '","lastname":"' . $lastName . '","email":"' . $Email . '","phone":"' . $Phone .']}';
-   // $retValue = '{"results":[' . $searchResults . '],"error":""}';
-
+    $retValue = '{"firstname":"' . $firstName . '","lastname":"' . $lastName . '","email":"' . $Email . '","phone":"' . $Phone .'""}';
     // $retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
  
     sendResultInfoAsJson( $retValue );
