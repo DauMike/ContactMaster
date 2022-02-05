@@ -97,6 +97,11 @@ function readCookie()
 	}
 }
 
+function loadContacts()
+{
+	console.log(userId);
+}
+
 function doLogout()
 {
 	userId = 0;
