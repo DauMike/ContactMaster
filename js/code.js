@@ -112,6 +112,7 @@ function loadContacts()
 
 	try
 	{
+		console.log("howdy");
 		xhr.onreadystatechange = function()
 		{
 			console.log("hi");
