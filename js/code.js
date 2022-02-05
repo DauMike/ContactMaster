@@ -99,7 +99,43 @@ function readCookie()
 
 function loadContacts()
 {
-	console.log(userId);
+	firstName = "";
+	let tmp = {userid:userId};
+	let jsonPayload = JSON.stringify(tmp);
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try
+	{
+		xhr.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				let jsonObject = JSON.parse( xhr.responseText );
+				firstName = jsonObject.firstName;
+
+				console.log(jsonObject);
+			//	alert(jsonObject);
+/*
+				if(resultAdd == null)
+				{
+					document.getElementById("newContactResult").innerHTML = "User Already Exist";
+					return;
+				}
+				else
+				{
+					document.getElementById("newContactResult").innerHTML = "Contact Added";
+				}*/
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("newContactResult").innerHTML = err.message;
+	}
 }
 
 function doLogout()
