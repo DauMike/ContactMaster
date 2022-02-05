@@ -103,6 +103,8 @@ function loadContacts()
 	let tmp = {userid:userId};
 	let jsonPayload = JSON.stringify(tmp);
 
+	let url = urlBase + '/LoadContacts.' + extension;
+
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
