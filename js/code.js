@@ -115,13 +115,9 @@ function loadContacts()
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				let jsonObject = JSON.parse( xhr.responseText );
-
-				while(xhr.responseText != "")
-				{
-					let jsonObject = JSON.parse( xhr.responseText );
-					console.log(jsonObject);
-				}
+		//		let jsonObject = JSON.parse( xhr.responseText );
+				var data = xhr.responseText;
+				var jsonResponse = JSON.parse(data);
 				
 			//	firstName = jsonObject.firstName;
 
@@ -139,7 +135,7 @@ function loadContacts()
 				}*/
 			}
 		};
-		xhr.send(jsonPayload);
+	//	xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
