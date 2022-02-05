@@ -65,7 +65,7 @@ function sendResultInfoAsJson( $obj )
 
 function returnWithError( $err )
 {
-    $retValue = '{"id":0,"error":"' . $err . '"}';
+    $retValue = '{"firstName":"","lastName":"","error":"' . $err . '"}';
     sendResultInfoAsJson( $retValue );
 }
 /*
