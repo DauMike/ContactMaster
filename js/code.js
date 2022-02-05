@@ -113,10 +113,11 @@ function loadContacts()
 	try
 	{
 		console.log("howdy");
-		xhr.onreadystatechange = function()
+		xhr.onload = function()
+	//	xhr.onreadystatechange = function()
 		{
 			console.log("hi");
-			if (this.readyState == 4 && this.status == 200)
+			if (this.status == 200)
 			{
 		//		let jsonObject = JSON.parse( xhr.responseText );
 				var data = xhr.responseText;
