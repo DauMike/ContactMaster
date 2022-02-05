@@ -18,7 +18,7 @@ else
 
 
    $result = $stmt->get_result();
-
+/*
    while($row = $result->fetch_assoc())
    {
        if( $searchCount > 0 )
@@ -36,10 +36,14 @@ else
     else
     {
         returnWithInfo( $searchResults );
+    }*/
+    while($row = $result->fetch_assoc())
+    {
+      returnWithInfo( $row['FirstName'], $row['LastName'], $row['Email'], $row['Phone']);
+      $searchCount++;
     }
-
+    
     $stmt->close();
-
     $conn->close(); 
 }
 
