@@ -16,7 +16,7 @@ if($conn->connection_error)
 else
 {
 //	$result = $conn->query("SELECT * FROM Contacts WHERE UserID ='$UserID';")
-   $stmt = $conn->prepare("SELECT FirstName, LastName, Email, Phone FROM Contacts WHERE UserID = ?");
+   $stmt = $conn->prepare("SELECT FirstName, LastName/*, Email, Phone*/ FROM Contacts WHERE UserID = ?");
    $stmt->bind_param("s", $inData["userid"]);
    $stmt->execute();
    $result = $stmt->get_result();
@@ -28,19 +28,20 @@ else
            $searchResults .= ",";
        }
        $searchCount++;
-       $searchResults .= '"'.$row["FirstName"] . ' ' . $row["LastName"] . ' ' . $row["Email"]. ' ' . $row["Phone"].'"';
+       $searchResults .= '"'.$row["FirstName"] . ' ' . $row["LastName"] .'"';
    }
 
     if( $searchCount == 0 )
     {
-        returnWithinfo( "No Contacts" );
+       returnWithError( "No Records Found" );
     }
     else
     {
         returnWithInfo( $searchResults );
     }
 
-   $stmt->close();
-   $conn->close(); 
+    stmt->close();
+
+    $conn->close(); 
 }
    ?>
