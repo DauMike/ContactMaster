@@ -14,7 +14,7 @@ if($conn->connection_error)
 }
 else
 {
-//	$result = $conn->query("SELECT * FROM Contacts WHERE UserID ='$UserID';")
+//	$stmt = $conn->query("SELECT * FROM Contacts WHERE UserID = ?")
    $stmt = $conn->prepare("SELECT FirstName, LastName , Email, Phone FROM Contacts WHERE UserID = ?");
    $stmt->bind_param("s", $inData["userid"]);
    $stmt->execute();
@@ -32,7 +32,7 @@ else
 
     if( $searchCount == 0 )
     {
-       returnWithError( "No Records Found" );
+       returnWithInfo( "No Records Found" );
     }
     else
     {
