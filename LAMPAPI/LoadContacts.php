@@ -43,6 +43,10 @@ else
       $searchCount++;
     }
 
+    if( $searchCount == 0 )
+    {
+       returnWithError( "No Records Found" );
+    }
     $stmt->close();
     $conn->close(); 
 }
@@ -71,7 +75,7 @@ function returnWithInfo( $searchResults )
     sendResultInfoAsJson( $retValue );
 
 }  */
-function returnWithInfo( $firstName, $lastName, $Email, $Phone )
+function returnWithInfo( $firstName, $lastName, $Email, $Phone)
 {
     $retValue = '{"firstname":"' . $firstName . '","lastname":"' . $lastName . '","email":"' . $Email . '","phone":"' . $Phone .'""}';
  // $retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
