@@ -113,8 +113,8 @@ function loadContacts()
 	try
 	{
 		console.log("howdy");
-		xhr.onload = function()
-	//	xhr.onreadystatechange = function()
+	//	xhr.onload = function()
+		xhr.onreadystatechange = function()
 		{
 			console.log("hi");
 			if (this.readyState == 4 && this.status == 200)
