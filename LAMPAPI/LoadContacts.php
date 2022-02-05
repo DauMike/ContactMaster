@@ -73,7 +73,7 @@ function returnWithInfo( $searchResults )
 }  */
 function returnWithInfo( $firstName, $lastName, $Email, $Phone )
 {
-    $retValue = '{'.$firstName. $lastName . $Email . $Phone .'}';
+    $retValue = '{"firstname:' . $firstName . ',"lastname":"' . $lastName . '","Email":"' . $Email . '","Phone":"' . $Phone .'}';
     sendResultInfoAsJson( $retValue );
 } 
 ?>
