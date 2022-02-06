@@ -136,7 +136,6 @@ function loadContacts()
 				contactEmail = jsonObject.emails;
 				contactPhone = jsonObject.phoneNumbers;
 //				fillTable();
-				display();
 /*
 				alert(contactCount);
 				alert(contactFirstName);
@@ -152,6 +151,7 @@ function loadContacts()
 	{
 //		document.getElementById("loadingContactsResults").innerHTML = err.message;
 	}
+	display();
 }
 
 function fillTable()
