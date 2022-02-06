@@ -119,8 +119,8 @@ function loadContacts()
 				alert("hey");
 				
 				firstName = jsonObject.firstNames;
-//				alert(jsonObject);
-				alertr(firstName);
+				alert(jsonObject);
+//				alertr(firstName);
 /*
 				if(resultAdd == null)
 				{
