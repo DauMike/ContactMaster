@@ -107,11 +107,11 @@ function loadContacts()
 
 	let tmp = {userid:userId};
 	let jsonPayload = JSON.stringify(tmp);
-	alert("hhelfasafi");
 
 	let url = urlBase + '/LoadContacts.' + extension;
 
-	document.getElementById("loadingContactsResults").innerHTML = "";
+//	document.getElementById("loadingContactsResults").innerHTML = "";
+	
 
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
