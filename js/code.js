@@ -191,7 +191,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 //	var container = document.getElementsByClassName('container');*/
     // create table element
     var table = document.createElement('table');
-	var thead = document.createElement('head');
+	var thead = document.createElement('thead');
     var tbody = document.createElement('tbody');
 	//create header
 		var hrow = document.createElement('tr');
