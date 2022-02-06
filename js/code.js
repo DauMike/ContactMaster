@@ -222,13 +222,13 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
             row.appendChild(cellPhone);
 //			containerPhone.appendChild(cellPhone);
         //append tr to tbody
-        tbody.appendChild(row);
+//        tbody.appendChild(row);
 		container.appendChild(row);
     }
     // append tbody to table
-	table.appendChild(tbody);
+//	table.appendChild(tbody);
     // append table to container
-    container.appendChild(table);
+//    container.appendChild(table);
 }
 display();
 
