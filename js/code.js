@@ -4,6 +4,11 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
+contactCount = 0;
+contactFirstName = "";
+contactLastName = "";
+contactEmail = "";
+contactPhone = "";
 
 function doLogin()
 {
@@ -144,6 +149,15 @@ function loadContacts()
 	{
 //		document.getElementById("loadingContactsResults").innerHTML = err.message;
 	}
+}
+
+function fillTable()
+{
+	alert(contactCount);
+	alert(contactFirstName);
+	alert(contactLastName);
+	alert(contactEmail);
+	alert(contactPhone)
 }
 
 function doLogout()
