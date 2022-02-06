@@ -112,10 +112,9 @@ function loadContacts()
 
 	try
 	{
-//		xhr.onreadystatechange = function()
-		xhr.responseText =function()
+		xhr.onreadystatechange = function()
 		{
-			if (this.status == 200)
+			if (this.readyState == 4 && this.status == 200)
 			{
 				console.log("hi");
 				alert("hi");
@@ -138,6 +137,10 @@ function loadContacts()
 				{
 					document.getElementById("newContactResult").innerHTML = "Contact Added";
 				}*/
+			}
+			else
+			{
+				alert("failure");
 			}
 		};
 	//	xhr.send(jsonPayload);
