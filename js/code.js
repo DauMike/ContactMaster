@@ -99,6 +99,7 @@ function readCookie()
 
 function loadContacts()
 {
+	alert("hheli");
 	contactFirstName = "";
 	contactLastName = "";
 	contactEmail = "";
