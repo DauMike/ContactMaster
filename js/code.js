@@ -134,7 +134,7 @@ function loadContacts()
 				contactLastName = jsonObject.lastNames;
 				contactEmail = jsonObject.emails;
 				contactPhone = jsonObject.phoneNumbers;
-			//	fillTable();
+				fillTable();
 /*
 				alert(contactCount);
 				alert(contactFirstName);
@@ -377,7 +377,7 @@ function deleteContact() {
 	document.getElementById("contactDeleteResult").innerHTML = "";
 
 	let tmp = {phone:phn,userid:userId};
-	alert(phn);
+	//alert(phn);
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/Delete.' + extension;
@@ -394,17 +394,17 @@ function deleteContact() {
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				let resultDelete = jsonObject.match("delete");
-				alert(jsonObject);
+				//alert(jsonObject);
 
 				if(resultDelete == null)
 				{
-					alert("No deletion happened");
+					//alert("No deletion happened");
 					document.getElementById("contactDeleteResult").innerHTML = "Contact Does Not Exist";
 					return;
 				}
 				else
 				{
-					alert("Termination successful");
+					//alert("Termination successful");
 					document.getElementById("contactDeleteResult").innerHTML = "Deletion Successful";
 				}
 			}
