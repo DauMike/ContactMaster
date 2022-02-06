@@ -108,7 +108,6 @@ function loadContacts()
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	alert("hello");
 
 	try
 	{
@@ -116,12 +115,11 @@ function loadContacts()
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				console.log("hi");
 				alert("hi");
 		//		let jsonObject = JSON.parse( xhr.responseText );
 				var data = xhr.responseText;
 				var jsonObject = JSON.parse;
-				console.log("hey");
+				alert("hey");
 				
 			//	firstName = jsonObject.firstName;
 
@@ -137,10 +135,6 @@ function loadContacts()
 				{
 					document.getElementById("newContactResult").innerHTML = "Contact Added";
 				}*/
-			}
-			else
-			{
-				alert("failure");
 			}
 		};
 		xhr.send(jsonPayload);
