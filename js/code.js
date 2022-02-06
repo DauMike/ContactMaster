@@ -110,8 +110,7 @@ function loadContacts()
 
 	let url = urlBase + '/LoadContacts.' + extension;
 
-//	document.getElementById("loadingContactsResults").innerHTML = "";
-	document.getElementById("contactCountResult").innerHTML = "";
+//	document.getElementById("contactCountResult").innerHTML = "";
 	
 
 	let xhr = new XMLHttpRequest();
