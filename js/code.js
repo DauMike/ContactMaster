@@ -129,12 +129,12 @@ function loadContacts()
 				contactLastName = jsonObject.lastNames;
 				contactEmail = jsonObject.emails;
 				contactPhone = jsonObject.phoneNumbers;
-
+/*
 				alert(contactCount);
 				alert(contactFirstName);
 				alert(contactLastName);
 				alert(contactEmail);
-				alert(contactPhone);
+				alert(contactPhone);*/
 			}
 		};
 		xhr.send(jsonPayload);
