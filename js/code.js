@@ -183,6 +183,7 @@ function fillTable()
 
 function display(contactCount, contactFirstName, contactLastName, contactEmail, contactPhone) {
     // get handle on div
+	  var newRow = document.getElementById('newRow');
       var containerFirst = document.getElementById('contactListFirstName');
 	  var containerLast = document.getElementById('contactListLastName');
 	  var containerEmail = document.getElementById('contactListEmail');
@@ -198,6 +199,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
     //  var vals = orderArray[i];
         // create tr element
         var row = document.createElement('tr');
+		newRow.appendChild(row);
         // loop inner array
         // for (var b = 0; b < vals.length; b++) {
             // create td element
