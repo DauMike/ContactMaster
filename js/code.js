@@ -183,12 +183,11 @@ function fillTable()
 
 function display(contactCount, contactFirstName, contactLastName, contactEmail, contactPhone) {
     // get handle on div
- //   var container = document.getElementById('contactTable');
+    var container = document.getElementById('contactTable');
 //	var container = document.getElementsByClassName('container');
     // create table element
-//    var table = document.createElement('table');
-//    var tbody = document.createElement('tbody');
-	var tbody = document.getElementById('contactTable');
+    var table = document.createElement('table');
+    var tbody = document.createElement('tbody');
     // loop array
 	//alert(contactCount);
     for (i = 0; i < contactCount; i++) {
@@ -227,9 +226,9 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
         tbody.appendChild(row);
     }
     // append tbody to table
- //   table.appendChild(tbody);
+    table.appendChild(tbody);
     // append table to container
- //   container.appendChild(table);
+    container.appendChild(table);
 }
 display();
 
