@@ -134,12 +134,13 @@ function loadContacts()
 				contactLastName = jsonObject.lastNames;
 				contactEmail = jsonObject.emails;
 				contactPhone = jsonObject.phoneNumbers;
-
+				fillTable();
+/*
 				alert(contactCount);
 				alert(contactFirstName);
 				alert(contactLastName);
 				alert(contactEmail);
-				alert(contactPhone);
+				alert(contactPhone);*/
 				
 			}
 		};
