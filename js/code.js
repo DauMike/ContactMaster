@@ -120,6 +120,7 @@ function loadContacts()
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
+				alert( xhr.responseText);
 				let jsonObject = JSON.parse( xhr.responseText );				
 				contactFirstName = jsonObject.firstNames;
 				contactLastName = jsonObject.lastNames;
