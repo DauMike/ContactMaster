@@ -147,6 +147,7 @@ function loadContacts()
 	}
 	catch(err)
 	{
+		alert("you failed");
 		document.getElementById("newContactResult").innerHTML = err.message;
 	}
 }
