@@ -207,8 +207,6 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
             // append td to tr
  //           row.appendChild(cell);
 			containerFirst.appendChild(cellFirst);
-			var cell = document.createElement('/td');
-			containerFirst.appendChild(cell);
 			var cellLast = document.createElement('td');
             // set text
             cellLast.textContent = contactLastName[i];
