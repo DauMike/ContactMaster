@@ -188,7 +188,7 @@ function display() {
     var table = document.createElement('table');
     var tbody = document.createElement('tbody');
     // loop array
-	alert(contactCount);
+	//alert(contactCount);
 	alert("hi");
     for (i = 0; i < contactCount; i++) {
         // get inner array
