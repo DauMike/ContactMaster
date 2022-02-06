@@ -201,37 +201,33 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
         // loop inner array
         // for (var b = 0; b < vals.length; b++) {
             // create td element
-            var cell = document.createElement('td');
+            var cellFirst = document.createElement('td');
             // set text
-            cell.textContent = contactFirstName[i];
-			//alert(contactFirstName[i]);
+            cellFirst.textContent = contactFirstName[i];
             // append td to tr
-            row.appendChild(cell);
-			containerFirst.appendChild(row);
-			var cell = document.createElement('td');
+ //           row.appendChild(cell);
+			containerFirst.appendChild(cellFirst);
+			var cellLast = document.createElement('td');
             // set text
-            cell.textContent = contactLastName[i];
-			//alert(contactLastName[i]);
+            cellLast.textContent = contactLastName[i];
             // append td to tr
-            row.appendChild(cell);
-			containerLast.appendChild(row);
-			var cell = document.createElement('td');
+//            row.appendChild(cell);
+			containerLast.appendChild(cellLast);
+			var cellEmail = document.createElement('td');
             // set text
-            cell.textContent = contactEmail[i];
-			//alert(contactEmail[i]);
+            cellEmail.textContent = contactEmail[i];
             // append td to tr
-            row.appendChild(cell);
-			containerEmail.appendChild(row);
-			var cell = document.createElement('td');
+ //           row.appendChild(cell);
+			containerEmail.appendChild(cellEmail);
+			var cellPhone = document.createElement('td');
             // set text
-            cell.textContent = contactPhone[i];
-			//alert(contactPhone[i]);
+            cellPhone.textContent = contactPhone[i];
             // append td to tr
-            row.appendChild(cell);
-			containerPhone.appendChild(row);
+ //           row.appendChild(cell);
+			containerPhone.appendChild(cellPhone);
         //append tr to tbody
         //tbody.appendChild(row);
-		//  container.appendChild(row);
+//		  container.appendChild(row);
     }
     // append tbody to table
 	//table.appendChild(tbody);
