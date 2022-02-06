@@ -127,7 +127,7 @@ function loadContacts()
 				email = jsonObject.emails;
 				phone = jsonObject.phoneNumbers;
 
-				alert(firstName[0]);
+				alert(firstName[1]);
 				alert(lastName);
 				alert(email);
 				alert(phone);
