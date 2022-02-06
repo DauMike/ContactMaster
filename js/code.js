@@ -183,58 +183,52 @@ function fillTable()
 
 function display(contactCount, contactFirstName, contactLastName, contactEmail, contactPhone) {
     // get handle on div
-	  var newRow = document.getElementById('newRow');
-      var containerFirst = document.getElementById('contactListFirstName');
+	var container = document.getElementById('contactListTable');
+ /*   var containerFirst = document.getElementById('contactListFirstName');
 	  var containerLast = document.getElementById('contactListLastName');
 	  var containerEmail = document.getElementById('contactListEmail');
 	  var containerPhone = document.getElementById('contactListPhone');
-//	var container = document.getElementsByClassName('container');
+//	var container = document.getElementsByClassName('container');*/
     // create table element
-   // var table = document.createElement('table');
-   // var tbody = document.createElement('tbody');
+    var table = document.createElement('table');
+    var tbody = document.createElement('tbody');
     // loop array
-	//alert(contactCount);
     for (i = 0; i < contactCount; i++) {
-        // get inner array
-    //  var vals = orderArray[i];
         // create tr element
         var row = document.createElement('tr');
-		newRow.appendChild(row);
-        // loop inner array
-        // for (var b = 0; b < vals.length; b++) {
             // create td element
             var cellFirst = document.createElement('td');
             // set text
             cellFirst.textContent = contactFirstName[i];
             // append td to tr
- //           row.appendChild(cell);
-			containerFirst.appendChild(cellFirst);
+            row.appendChild(cellFirst);
+//			containerFirst.appendChild(cellFirst);
 			var cellLast = document.createElement('td');
             // set text
             cellLast.textContent = contactLastName[i];
             // append td to tr
-//            row.appendChild(cell);
-			containerLast.appendChild(cellLast);
+            row.appendChild(cellLast);
+//			containerLast.appendChild(cellLast);
 			var cellEmail = document.createElement('td');
             // set text
             cellEmail.textContent = contactEmail[i];
             // append td to tr
- //           row.appendChild(cell);
-			containerEmail.appendChild(cellEmail);
+            row.appendChild(cellEmail);
+//			containerEmail.appendChild(cellEmail);
 			var cellPhone = document.createElement('td');
             // set text
             cellPhone.textContent = contactPhone[i];
             // append td to tr
- //           row.appendChild(cell);
-			containerPhone.appendChild(cellPhone);
+            row.appendChild(cellPhone);
+//			containerPhone.appendChild(cellPhone);
         //append tr to tbody
-        //tbody.appendChild(row);
-//		  container.appendChild(row);
+        tbody.appendChild(row);
+		container.appendChild(row);
     }
     // append tbody to table
-	//table.appendChild(tbody);
+	table.appendChild(tbody);
     // append table to container
-    //container.appendChild(table);
+    container.appendChild(table);
 }
 display();
 
