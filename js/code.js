@@ -151,7 +151,6 @@ function loadContacts()
 	{
 //		document.getElementById("loadingContactsResults").innerHTML = err.message;
 	}
-	display();
 }
 
 function fillTable()
