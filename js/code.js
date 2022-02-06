@@ -4,11 +4,11 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
-contactCount = 0;
-contactFirstName = "";
-contactLastName = "";
-contactEmail = "";
-contactPhone = "";
+let contactCount = 0;
+let contactFirstName = "";
+let contactLastName = "";
+let contactEmail = "";
+let contactPhone = "";
 
 function doLogin()
 {
