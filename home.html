@@ -16,7 +16,7 @@
 	document.addEventListener('DOMContentLoaded', function() 
 	{
 		readCookie();
-		loadContacts();
+	//	loadContacts();
 	}, false);
 </script>
 <style>
@@ -416,6 +416,7 @@ $(document).ready(function(){
 						<script type="text/javascript">;
 							{
 								window.onload = (event) => {
+									loadContacts();
 									alert(contactCount);
 								};
 								for(var i=0; i < 2; i++)
