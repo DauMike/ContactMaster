@@ -191,7 +191,23 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 //	var container = document.getElementsByClassName('container');*/
     // create table element
     var table = document.createElement('table');
+	var thead = document.createElement('head');
     var tbody = document.createElement('tbody');
+	//create header
+		var hrow = document.createElement('tr');
+		var fieldName = document.createElement('th');
+		fieldName.textContent = "First Name"
+		hrow.appendChild(fieldName);
+		var fieldLast = document.createElement('th');
+		fieldLast.textContent = "Last Name"
+		hrow.appendChild(fieldLast);
+		var fieldEmail = document.createElement('th');
+		fieldEmail.textContent = "Email"
+		hrow.appendChild(fieldEmail);
+		var fieldPhone = document.createElement('th');
+		fieldPhone.textContent = "Phone"
+		hrow.appendChild(fieldPhone);
+		thead.appendChild(hrow);
     // loop array
     for (i = 0; i < contactCount; i++) {
         // create tr element
@@ -222,6 +238,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
             row.appendChild(cellPhone);
 //			containerPhone.appendChild(cellPhone);
         //append tr to tbody
+		tbody.appendChild(hrow);
         tbody.appendChild(row);
 //		container.appendChild(row);
     }
