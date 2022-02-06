@@ -4,6 +4,10 @@ $inData = getRequestInfo();
 
 $searchResults = "";
 $searchCount = 0;
+$firstNames = "";
+$lastNames = "";
+$emails = "";
+$phoneNumbers = "";
 
 $conn = new mysqli("localhost", "student", "studyhard", "COP4331");
 if($conn->connection_error)
@@ -36,7 +40,7 @@ else
     else
     {
         returnWithInfo( $searchResults );
-    }*/
+    }
     while($row = $result->fetch_assoc())
     {
       returnWithInfo( $row['FirstName'], $row['LastName'], $row['Email'], $row['Phone']);
@@ -49,7 +53,34 @@ else
     }
     $stmt->close();
     $conn->close(); 
-}
+}*/
+
+while($row = $result->fetch_assoc())
+{
+    if( $searchCount > 0 )
+    {
+        $firstNames .= ",";
+        $lastNames .= ",";
+        $emails .= ",";
+        $phoneNumbers .= ",";
+
+    }
+    $searchCount++;
+    $firstNames .= '"'.$row["FirstName"] .'"';
+    $lastNames .= '"'.$row["LastName"] .'"';
+    $emails .= '"'.$row["Email"] .'"';
+    $phoneNumbers .= '"'.$row["Phone"] .'"';
+   }
+
+ if( $searchCount == 0 )
+ {
+    returnWithError( "No Records Found" );
+ }
+ else
+ {
+     returnWithInfo( $firstNames, $lastNames, $emails, $phoneNumbers );
+ }
+}  
 
 
 function getRequestInfo()
@@ -74,12 +105,20 @@ function returnWithInfo( $searchResults )
     $retValue = '{"results":[' . $searchResults . ']}';
     sendResultInfoAsJson( $retValue );
 
-}  */
+}  
+
 function returnWithInfo( $firstName, $lastName, $Email, $Phone)
 {
     $retValue = '{"firstname":"' . $firstName . '","lastname":"' . $lastName . '","email":"' . $Email . '","phone":"' . $Phone .'""}';
     // $retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
  
     sendResultInfoAsJson( $retValue );
-} 
+} */
+
+function returnWithInfo( $firstNames, $lastNames, $emails, $phoneNumbers )
+{
+    $retValue = '{"firstNames":[' . $firstNames . '],"lastNames":[' . $lastNames . '],"emails":[' . $emails . '],"phoneNumbers":[' . $phoneNumbers . ']}';
+    sendResultInfoAsJson( $retValue );
+}
+
 ?>
