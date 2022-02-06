@@ -134,7 +134,8 @@ function loadContacts()
 				alert(contactFirstName);
 				alert(contactLastName);
 				alert(contactEmail);
-				alert(contactPhone);*/
+				alert(contactPhone);
+				*/
 			}
 		};
 		xhr.send(jsonPayload);
