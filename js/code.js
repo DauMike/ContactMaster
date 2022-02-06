@@ -132,12 +132,12 @@ function loadContacts()
 				contactEmail = jsonObject.emails;
 				contactPhone = jsonObject.phoneNumbers;
 //				fillTable();
-				display();
-/*				alert(contactCount);
+//				display();
+				alert(contactCount);
 				alert(contactFirstName);
 				alert(contactLastName);
 				alert(contactEmail);
-				alert(contactPhone);*/
+				alert(contactPhone);
 				
 			}
 		};
@@ -188,8 +188,7 @@ function display() {
     var table = document.createElement('table');
     var tbody = document.createElement('tbody');
     // loop array
-	//alert(contactCount);
-	alert("hi");
+	alert(contactCount);
     for (i = 0; i < contactCount; i++) {
         // get inner array
     //  var vals = orderArray[i];
