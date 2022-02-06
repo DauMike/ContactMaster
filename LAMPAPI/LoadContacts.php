@@ -78,7 +78,7 @@ while($row = $result->fetch_assoc())
  }
  else
  {
-     returnWithInfo( $firstNames, $lastNames, $emails, $phoneNumbers );
+     returnWithInfo( $firstNames, $lastNames, $emails, $phoneNumbers, $searchCount );
  }
 }  
 
@@ -115,9 +115,9 @@ function returnWithInfo( $firstName, $lastName, $Email, $Phone)
     sendResultInfoAsJson( $retValue );
 } */
 
-function returnWithInfo( $firstNames, $lastNames, $emails, $phoneNumbers )
+function returnWithInfo( $firstNames, $lastNames, $emails, $phoneNumbers, $searchCount )
 {
-    $retValue = '{"firstNames":[' . $firstNames . '],"lastNames":[' . $lastNames . '],"emails":[' . $emails . '],"phoneNumbers":[' . $phoneNumbers . ']}';
+    $retValue   = '{"contactCount": [' . $searchCount . '],"firstNames":[' . $firstNames . '],"lastNames":[' . $lastNames . '],"emails":[' . $emails . '],"phoneNumbers":[' . $phoneNumbers . ']}';
 //    $retValue = '{"firstNames": [' . $firstNames . ']}';
     sendResultInfoAsJson( $retValue );
 }

@@ -99,6 +99,7 @@ function readCookie()
 
 function loadContacts()
 {
+	contactCount = 0;
 	contactFirstName = "";
 	contactLastName = "";
 	contactEmail = "";
@@ -121,16 +122,19 @@ function loadContacts()
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				let jsonObject = JSON.parse( xhr.responseText );				
+				let jsonObject = JSON.parse( xhr.responseText );	
+
+				contactCount = jsonObject.contactCount;
 				contactFirstName = jsonObject.firstNames;
 				contactLastName = jsonObject.lastNames;
 				contactEmail = jsonObject.emails;
 				contactPhone = jsonObject.phoneNumbers;
 
-			/*	alert(contactFirstName);
+				alert(contactCount);
+				alert(contactFirstName);
 				alert(contactLastName);
 				alert(contactEmail);
-				alert(contactPhone);*/
+				alert(contactPhone);
 			}
 		};
 		xhr.send(jsonPayload);
