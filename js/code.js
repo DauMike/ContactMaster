@@ -200,21 +200,25 @@ function display() {
             var cell = document.createElement('td');
             // set text
             cell.textContent = contactFirstName[i];
+			alert(contactFirstName[i]);
             // append td to tr
             row.appendChild(cell);
 			var cell = document.createElement('td');
             // set text
             cell.textContent = contactLastName[i];
+			alert(contactLastName[i]);
             // append td to tr
             row.appendChild(cell);
 			var cell = document.createElement('td');
             // set text
             cell.textContent = contactEmail[i];
+			alert(contactEmail[i]);
             // append td to tr
             row.appendChild(cell);
 			var cell = document.createElement('td');
             // set text
             cell.textContent = contactPhone[i];
+			alert(contactPhone[i]);
             // append td to tr
             row.appendChild(cell);
         //append tr to tbody
