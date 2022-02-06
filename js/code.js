@@ -116,7 +116,7 @@ function loadContacts()
 			if (this.readyState == 4 && this.status == 200)
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
-				alert("hey");
+				alert(xhr.responseText);
 				
 				firstName = jsonObject.firstNames;
 				alert(jsonObject);
