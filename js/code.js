@@ -100,11 +100,11 @@ function readCookie()
 
 function loadContacts()
 {
-	contactCount = 0;
-	contactFirstName = "";
-	contactLastName = "";
-	contactEmail = "";
-	contactPhone = "";
+	let contactCount = 0;
+	let contactFirstName = "";
+	let contactLastName = "";
+	let contactEmail = "";
+	let contactPhone = "";
 
 	let tmp = {userid:userId};
 	let jsonPayload = JSON.stringify(tmp);
