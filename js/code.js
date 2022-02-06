@@ -154,11 +154,19 @@ function loadContacts()
 
 function fillTable()
 {
-	alert(contactCount);
+	/*alert(contactCount);
 	alert(contactFirstName);
 	alert(contactLastName);
 	alert(contactEmail);
-	alert(contactPhone);
+	alert(contactPhone);*/
+	for(var i=0; i < contactCount; i++)
+	{
+		alert(contactCount[i]);
+		alert(contactFirstName[i]);
+		alert(contactLastName[i]);
+		alert(contactEmail[i]);
+		alert(contactPhone[i]);
+	}
 }
 
 function doLogout()
