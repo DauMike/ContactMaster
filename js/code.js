@@ -126,10 +126,10 @@ function loadContacts()
 				contactEmail = jsonObject.emails;
 				contactPhone = jsonObject.phoneNumbers;
 
-				alert(firstName);
-				alert(lastName);
-				alert(email);
-				alert(phone);
+				alert(contactFirstName);
+				alert(contactLastName);
+				alert(contactEmail);
+				alert(contactPhone);
 			}
 		};
 		xhr.send(jsonPayload);
