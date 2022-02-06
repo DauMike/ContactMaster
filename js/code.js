@@ -183,13 +183,13 @@ function fillTable()
 
 function display() {
     // get handle on div
-	alert("hi");
     var container = document.getElementById('container');
     // create table element
     var table = document.createElement('table');
     var tbody = document.createElement('tbody');
     // loop array
 	alert(contactCount);
+	alert("hi");
     for (i = 0; i < contactCount; i++) {
         // get inner array
     //  var vals = orderArray[i];
