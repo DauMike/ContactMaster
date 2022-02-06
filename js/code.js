@@ -99,14 +99,16 @@ function readCookie()
 
 function loadContacts()
 {
-	firstName = "";
-	lastName = "";
-	email = "";
-	phone = "";
+	contactFirstName = "";
+	contactLastName = "";
+	contactEmail = "";
+	contactPhone = "";
 	let tmp = {userid:userId};
 	let jsonPayload = JSON.stringify(tmp);
 
 	let url = urlBase + '/LoadContacts.' + extension;
+
+	document.getElementById("loadingContactsResults").innerHTML = "";
 
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -118,38 +120,23 @@ function loadContacts()
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				alert(xhr.responseText);
-			/*	let jsonObject = JSON.parse( xhr.responseText );
-				var firstNames = JSON.decode(xhr.responseText)*/
 				let jsonObject = JSON.parse( xhr.responseText );				
-				firstName = jsonObject.firstNames;
-				lastName = jsonObject.lastNames;
-				email = jsonObject.emails;
-				phone = jsonObject.phoneNumbers;
+				contactFirstName = jsonObject.firstNames;
+				contactLastName = jsonObject.lastNames;
+				contactEmail = jsonObject.emails;
+				contactPhone = jsonObject.phoneNumbers;
 
-				alert(firstName[1]);
+				alert(firstName);
 				alert(lastName);
 				alert(email);
 				alert(phone);
-//				alertr(firstName);
-/*
-				if(resultAdd == null)
-				{
-					document.getElementById("newContactResult").innerHTML = "User Already Exist";
-					return;
-				}
-				else
-				{
-					document.getElementById("newContactResult").innerHTML = "Contact Added";
-				}*/
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		alert("you failed");
-		document.getElementById("newContactResult").innerHTML = err.message;
+		document.getElementById("loadingContactsResults").innerHTML = err.message;
 	}
 }
 
