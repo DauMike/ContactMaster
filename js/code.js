@@ -208,6 +208,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 		fieldPhone.textContent = "Phone"
 		hrow.appendChild(fieldPhone);
 		thead.appendChild(hrow);
+		tbody.appendChild(hrow);
     // loop array
     for (i = 0; i < contactCount; i++) {
         // create tr element
@@ -238,7 +239,6 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
             row.appendChild(cellPhone);
 //			containerPhone.appendChild(cellPhone);
         //append tr to tbody
-		tbody.appendChild(hrow);
         tbody.appendChild(row);
 //		container.appendChild(row);
     }
