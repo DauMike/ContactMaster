@@ -109,13 +109,14 @@ function loadContacts()
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	console.log("hello");
+	alert("hello");
 
 	try
 	{
-		console.log("howdy");
 		xhr.onreadystatechange = function()
 		{
 			console.log("hi");
+			alert("hi");
 			if (this.readyState == 4 && this.status == 200)
 			{
 		//		let jsonObject = JSON.parse( xhr.responseText );
