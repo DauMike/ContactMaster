@@ -111,6 +111,7 @@ function loadContacts()
 	let url = urlBase + '/LoadContacts.' + extension;
 
 //	document.getElementById("loadingContactsResults").innerHTML = "";
+	document.getElementById("contactCountResult").innerHTML = "";
 	
 
 	let xhr = new XMLHttpRequest();
@@ -129,6 +130,8 @@ function loadContacts()
 				contactLastName = jsonObject.lastNames;
 				contactEmail = jsonObject.emails;
 				contactPhone = jsonObject.phoneNumbers;
+				document.getElementById("contactCountResult").innerHTML = contactCount;
+
 /*
 				alert(contactCount);
 				alert(contactFirstName);
