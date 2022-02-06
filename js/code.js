@@ -132,12 +132,12 @@ function loadContacts()
 				contactEmail = jsonObject.emails;
 				contactPhone = jsonObject.phoneNumbers;
 //				fillTable();
-
-				alert(contactCount);
+			
+/*				alert(contactCount);
 				alert(contactFirstName);
 				alert(contactLastName);
 				alert(contactEmail);
-				alert(contactPhone);
+				alert(contactPhone);*/
 				
 			}
 		};
