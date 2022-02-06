@@ -204,24 +204,32 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			//alert(contactFirstName[i]);
             // append td to tr
             row.appendChild(cell);
+			var cell = document.createElement('/td');
+			row.appendChild(cell);
 			var cell = document.createElement('td');
             // set text
             cell.textContent = contactLastName[i];
 			//alert(contactLastName[i]);
             // append td to tr
             row.appendChild(cell);
+			var cell = document.createElement('/td');
+			row.appendChild(cell);
 			var cell = document.createElement('td');
             // set text
             cell.textContent = contactEmail[i];
 			//alert(contactEmail[i]);
             // append td to tr
             row.appendChild(cell);
+			var cell = document.createElement('/td');
+			row.appendChild(cell);
 			var cell = document.createElement('td');
             // set text
             cell.textContent = contactPhone[i];
 			//alert(contactPhone[i]);
             // append td to tr
             row.appendChild(cell);
+			var cell = document.createElement('/td');
+			row.appendChild(cell);
         //append tr to tbody
         //tbody.appendChild(row);
 		  container.appendChild(row);
