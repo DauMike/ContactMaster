@@ -231,7 +231,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			containerPhone.appendChild(row);
         //append tr to tbody
         //tbody.appendChild(row);
-		  container.appendChild(row);
+		//  container.appendChild(row);
     }
     // append tbody to table
 	//table.appendChild(tbody);
