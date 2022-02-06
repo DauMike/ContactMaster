@@ -99,7 +99,6 @@ function readCookie()
 
 function loadContacts()
 {
-	alert("hheli");
 	contactFirstName = "";
 	contactLastName = "";
 	contactEmail = "";
@@ -123,7 +122,6 @@ function loadContacts()
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				alert( xhr.responseText);
 				let jsonObject = JSON.parse( xhr.responseText );				
 				contactFirstName = jsonObject.firstNames;
 				contactLastName = jsonObject.lastNames;
@@ -140,7 +138,7 @@ function loadContacts()
 	}
 	catch(err)
 	{
-		document.getElementById("loadingContactsResults").innerHTML = err.message;
+//		document.getElementById("loadingContactsResults").innerHTML = err.message;
 	}
 }
 
