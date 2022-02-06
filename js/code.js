@@ -188,7 +188,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
     var table = document.createElement('table');
     var tbody = document.createElement('tbody');
     // loop array
-	alert(contactCount);
+	//alert(contactCount);
     for (i = 0; i < contactCount; i++) {
         // get inner array
     //  var vals = orderArray[i];
@@ -200,25 +200,25 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
             var cell = document.createElement('td');
             // set text
             cell.textContent = contactFirstName[i];
-			alert(contactFirstName[i]);
+			//alert(contactFirstName[i]);
             // append td to tr
             row.appendChild(cell);
 			var cell = document.createElement('td');
             // set text
             cell.textContent = contactLastName[i];
-			alert(contactLastName[i]);
+			//alert(contactLastName[i]);
             // append td to tr
             row.appendChild(cell);
 			var cell = document.createElement('td');
             // set text
             cell.textContent = contactEmail[i];
-			alert(contactEmail[i]);
+			//alert(contactEmail[i]);
             // append td to tr
             row.appendChild(cell);
 			var cell = document.createElement('td');
             // set text
             cell.textContent = contactPhone[i];
-			alert(contactPhone[i]);
+			//alert(contactPhone[i]);
             // append td to tr
             row.appendChild(cell);
         //append tr to tbody
@@ -229,7 +229,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
     // append table to container
     container.appendChild(table);
 }
-//display();
+display();
 
 function doLogout()
 {
