@@ -135,7 +135,8 @@ function loadContacts()
 				contactLastName = jsonObject.lastNames;
 				contactEmail = jsonObject.emails;
 				contactPhone = jsonObject.phoneNumbers;
-				fillTable();
+//				fillTable();
+				display();
 /*
 				alert(contactCount);
 				alert(contactFirstName);
@@ -166,7 +167,7 @@ function fillTable()
 		alert(contactLastName[i]);
 		alert(contactEmail[i]);
 		alert(contactPhone[i]);
-	}*/
+	}
 	var table = document.createElement("table");
 	for(var i=0; i < contactCount; i++)
 	{
@@ -174,7 +175,15 @@ function fillTable()
 		var cell = row.insertCell();
 		cell.appendChild(document.createTextNode(contactFirstName[i]));
 	}
-	return table;
+	for(var i=0; i < 2; i++)
+	{
+		document.write("<tr>");
+		document.write("<td>" + contactFirstName[i] + "</td>");
+		document.write("<td>" + contactLastName[i] + "</td>");
+		document.write("<td>" + contactEmail[i] + "</td>");
+		document.write("<td>" + contactPhone[i] + "</td>");
+	}
+	return table;*/
 }
 
 function display() {
@@ -184,20 +193,35 @@ function display() {
     var table = document.createElement('table');
     var tbody = document.createElement('tbody');
     // loop array
-    for (i = 0; i < orderArray.length; i++) {
+	alert(contactCount);
+    for (i = 0; i < contactCount; i++) {
         // get inner array
-        var vals = orderArray[i];
+    //  var vals = orderArray[i];
         // create tr element
         var row = document.createElement('tr');
         // loop inner array
-        for (var b = 0; b < vals.length; b++) {
+        // for (var b = 0; b < vals.length; b++) {
             // create td element
             var cell = document.createElement('td');
             // set text
-            cell.textContent = vals[b];
+            cell.textContent = contactFirstName[i];
             // append td to tr
             row.appendChild(cell);
-        }
+			var cell = document.createElement('td');
+            // set text
+            cell.textContent = contactLastName[i];
+            // append td to tr
+            row.appendChild(cell);
+			var cell = document.createElement('td');
+            // set text
+            cell.textContent = contactEmail[i];
+            // append td to tr
+            row.appendChild(cell);
+			var cell = document.createElement('td');
+            // set text
+            cell.textContent = contactPhone[i];
+            // append td to tr
+            row.appendChild(cell);
         //append tr to tbody
         tbody.appendChild(row);
     }
@@ -207,18 +231,6 @@ function display() {
     container.appendChild(table);
 }
 display();
-
-function display() {
-    var table = document.createElement("table");
-    for (var i=0; i<orderArray.length; i++) {
-        var row = table.insertRow();
-        for (var j=0; j<orderArray[i].length; j++) {
-            var cell = row.insertCell();
-            cell.appendChild(document.createTextNode(contactFirstName[i]));
-        }
-    }
-    return table;
-}
 
 function doLogout()
 {
