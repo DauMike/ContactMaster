@@ -183,8 +183,8 @@ function fillTable()
 
 function display(contactCount, contactFirstName, contactLastName, contactEmail, contactPhone) {
     // get handle on div
-//    var container = document.getElementById('table');
-	var container = document.getElementsByClassName('container');
+    var container = document.getElementById('table');
+//	var container = document.getElementsByClassName('container');
     // create table element
     var table = document.createElement('table');
     var tbody = document.createElement('tbody');
