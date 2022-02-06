@@ -104,10 +104,10 @@ function loadContacts()
 	contactLastName = "";
 	contactEmail = "";
 	contactPhone = "";
-	alert("hhelfasafi");
 
 	let tmp = {userid:userId};
 	let jsonPayload = JSON.stringify(tmp);
+	alert("hhelfasafi");
 
 	let url = urlBase + '/LoadContacts.' + extension;
 
