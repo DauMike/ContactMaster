@@ -117,6 +117,7 @@ function loadContacts()
 
 //	document.getElementById("contactCountResult").innerHTML = "";
 	
+	
 
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -166,6 +167,57 @@ function fillTable()
 		alert(contactEmail[i]);
 		alert(contactPhone[i]);
 	}*/
+	var table = document.createElement("table");
+	for(var i=0; i < contactCount; i++)
+	{
+		var row = table.insertRow();
+		var cell = row.insertCell();
+		cell.appendChild(document.createTextNode(contactFirstName[i]));
+	}
+	return table;
+}
+
+function display() {
+    // get handle on div
+    var container = document.getElementById('container');
+    // create table element
+    var table = document.createElement('table');
+    var tbody = document.createElement('tbody');
+    // loop array
+    for (i = 0; i < orderArray.length; i++) {
+        // get inner array
+        var vals = orderArray[i];
+        // create tr element
+        var row = document.createElement('tr');
+        // loop inner array
+        for (var b = 0; b < vals.length; b++) {
+            // create td element
+            var cell = document.createElement('td');
+            // set text
+            cell.textContent = vals[b];
+            // append td to tr
+            row.appendChild(cell);
+        }
+        //append tr to tbody
+        tbody.appendChild(row);
+    }
+    // append tbody to table
+    table.appendChild(tbody);
+    // append table to container
+    container.appendChild(table);
+}
+display();
+
+function display() {
+    var table = document.createElement("table");
+    for (var i=0; i<orderArray.length; i++) {
+        var row = table.insertRow();
+        for (var j=0; j<orderArray[i].length; j++) {
+            var cell = row.insertCell();
+            cell.appendChild(document.createTextNode(contactFirstName[i]));
+        }
+    }
+    return table;
 }
 
 function doLogout()
