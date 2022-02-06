@@ -115,14 +115,12 @@ function loadContacts()
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				alert("hi");
 				let jsonObject = JSON.parse( xhr.responseText );
 				alert("hey");
 				
-			//	firstName = jsonObject.firstName;
-
-			//	console.log(jsonObject);
-			//	alert(jsonObject);
+				firstName = jsonObject.firstNames;
+				alert(jsonObject);
+				alertr(firstName);
 /*
 				if(resultAdd == null)
 				{
