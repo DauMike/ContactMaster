@@ -100,6 +100,9 @@ function readCookie()
 function loadContacts()
 {
 	firstName = "";
+	lastName = "";
+	email = "";
+	phone = "";
 	let tmp = {userid:userId};
 	let jsonPayload = JSON.stringify(tmp);
 
@@ -120,8 +123,14 @@ function loadContacts()
 				var firstNames = JSON.decode(xhr.responseText)*/
 				let jsonObject = JSON.parse( xhr.responseText );				
 				firstName = jsonObject.firstNames;
+				lastName = jsonObject.lastNames;
+				email = jsonObject.emails;
+				phone = jsonObject.phoneNumbers;
 
 				alert(firstName);
+				alert(lastName);
+				alert(email);
+				alert(phone);
 //				alertr(firstName);
 /*
 				if(resultAdd == null)
