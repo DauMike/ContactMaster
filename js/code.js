@@ -132,7 +132,7 @@ function loadContacts()
 				contactEmail = jsonObject.emails;
 				contactPhone = jsonObject.phoneNumbers;
 //				fillTable();
-				display(contactCount);
+				display(contactCount, contactFirstName, contactLastName, contactEmail, contactPhone);
 /*				alert(contactCount);
 				alert(contactFirstName);
 				alert(contactLastName);
@@ -181,7 +181,7 @@ function fillTable()
 	return table;*/
 }
 
-function display(contactCount) {
+function display(contactCount, contactFirstName, contactLastName, contactEmail, contactPhone) {
     // get handle on div
     var container = document.getElementById('container');
     // create table element
