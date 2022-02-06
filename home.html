@@ -418,6 +418,9 @@ $(document).ready(function(){
 								window.onload = (event) => {
 									console.log("hi");
 								};
+								document.addEventListener('load', (event) => {
+									alert("hello");
+								});
 								for(var i=0; i < 2; i++)
 								{
 									document.write("<tr>");
