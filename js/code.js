@@ -143,7 +143,7 @@ function loadContacts()
 				alert("failure");
 			}
 		};
-	//	xhr.send(jsonPayload);
+		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
