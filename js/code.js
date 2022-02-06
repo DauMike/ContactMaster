@@ -100,7 +100,6 @@ function readCookie()
 	{
 		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
 	}
-	loadContacts();
 }
 
 function loadContacts()
