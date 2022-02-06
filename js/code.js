@@ -155,10 +155,10 @@ function loadContacts()
 function fillTable()
 {
 	alert(contactCount);
-    alert(contactFirstName);
+  /*alert(contactFirstName);
 	alert(contactLastName);
 	alert(contactEmail);
-	alert(contactPhone);
+	alert(contactPhone);*/
 	for(var i=0; i < contactCount; i++)
 	{
 		alert(contactFirstName[i]);
