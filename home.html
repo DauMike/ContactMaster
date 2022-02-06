@@ -415,7 +415,9 @@ $(document).ready(function(){
                         </td>
 						<script type="text/javascript">;
 							{
-//								alert(contactCount);
+								document.addEventListener('load', (event) => {
+								alert(contactCount);
+								});
 								for(var i=0; i < 2; i++)
 								{
 									document.write("<tr>");
