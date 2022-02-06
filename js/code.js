@@ -132,13 +132,13 @@ function loadContacts()
 				contactPhone = jsonObject.phoneNumbers;
 				document.getElementById("contactCountResult").innerHTML = contactCount;
 
-/*
+
 				alert(contactCount);
 				alert(contactFirstName);
 				alert(contactLastName);
 				alert(contactEmail);
 				alert(contactPhone);
-				*/
+				
 			}
 		};
 		xhr.send(jsonPayload);
