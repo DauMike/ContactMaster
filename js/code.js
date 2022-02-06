@@ -183,6 +183,7 @@ function fillTable()
 
 function display() {
     // get handle on div
+	alert("hi");
     var container = document.getElementById('container');
     // create table element
     var table = document.createElement('table');
@@ -229,7 +230,7 @@ function display() {
     // append table to container
     container.appendChild(table);
 }
-display();
+//display();
 
 function doLogout()
 {
