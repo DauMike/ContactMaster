@@ -5,7 +5,7 @@ contactsTable, th, td{
 	text-align: center;
 }
 
-contactsTable tbody{
+contactsTable tbody tr{
 	height: 150px;
 	overflow: auto;
 }
