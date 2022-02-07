@@ -11,6 +11,9 @@ contactsTable, th:first-child{
 
 contactsTable, th:last-child{
 	width: 150px;
+}
+
+contactsTable, tbody td:last-child{
 	display: inline-block;
 }
 
