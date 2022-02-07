@@ -140,6 +140,11 @@ function loadContacts()
 }
 
 function display(contactCount, contactFirstName, contactLastName, contactEmail, contactPhone) {
+	var btn = document.createElement('input');
+	btn.type = "button";
+	btn.className = "edit";
+	btn.value = "edit";
+	btn.onclick = "#editContact";
     // get handle on div
 	var container = document.getElementById('contactsTable');
  /*   var containerFirst = document.getElementById('contactListFirstName');
@@ -195,7 +200,9 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			var cellPhone = document.createElement('td');
             cellPhone.textContent = contactPhone[i];
             row.appendChild(cellPhone);
-//			containerPhone.appendChild(cellPhone);
+/*			var cellActions = document.createElement('td');
+            cellActions.textContent = contactFirstName[i];*/
+            row.appendChild(btn);
         //append tr to tbody
         tbody.appendChild(row);
 //		container.appendChild(row);
