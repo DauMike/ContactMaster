@@ -371,7 +371,6 @@ function searchContact()
 function deleteContact() {
 	let phn = document.getElementById("phoneText").value;
 	phn = phn.replace(/(\d{3})(\d{3})(\d+)/, '$1-$2-$3');
-	alert(phn);
 
 	document.getElementById("contactDeleteResult").innerHTML = "";
 
@@ -423,6 +422,9 @@ function wrapperFunction() {
 	let newLastName = document.getElementById("lastName").value;
 	let newEmail = document.getElementById("email").value;
 	let phonenumber = document.getElementById("phoneNumber").value;
+
+	phonenumber = phonenumber.replace(/(\d{3})(\d{3})(\d+)/, '$1-$2-$3');
+	alert(phonenumber);
 
 	document.getElementById("editResult").innerHTML = "";
 
