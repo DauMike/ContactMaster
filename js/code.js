@@ -196,12 +196,12 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
             cellPhone.textContent = contactPhone[i];
             row.appendChild(cellPhone);
 			var cellActions = document.createElement('td');
-			var btn = document.createElement('input');
-			btn.type = "button";
-			btn.className = "edit";
-			btn.value = "Edit";
-			btn.onclick = "#editContact";
-			cellActions.appendChild(btn);
+			var btnEdit = document.createElement('input');
+			btnEdit.type = "button";
+			btnEdit.className = "edit";
+			btnEdit.value = "Edit";
+			btnEdit.onclick = "#editContact";
+			cellActions.appendChild(btnEdit);
             row.appendChild(cellActions);
         //append tr to tbody
         tbody.appendChild(row);
