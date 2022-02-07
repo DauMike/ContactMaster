@@ -215,15 +215,6 @@ $(document).ready(function(){
 					</ul>
 				</div>-->
 			</div>
-	<script type="text/javascript">
-		var tele = document.querySelector('#telle');
-
-		tele.addEventListener('keyup', function(e){
-  		if (event.key != 'Backspace' && (tele.value.length === 3 || tele.value.length === 7)){
- 		 tele.value += '-';
-  			}
-		});
-	</script>
 	<!-- Add Modal HTML -->
 	<div id="addContact" class="modal fade">
 		<div class="modal-dialog">
@@ -311,7 +302,7 @@ $(document).ready(function(){
                         <p>Enter the number of the contact to be deleted</p>
                          <div class="form-group">
                             <label>10 Digit Phone Number</label>
-                            <input type="tel" id="telle" class="form-control" maxlength="12" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required> <!--"[789][0-9]{9}"-->
+                            <input type="tel" id="phoneText" class="form-control" maxlength="12" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required> <!--"[789][0-9]{9}"-->
                         </div>
                         <p class="text-warning"><small>This action cannot be undone.</small></p>
                     </div>
