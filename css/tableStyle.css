@@ -28,7 +28,6 @@ contactsTable, tbody tr:hover td {
 }
 
 .buttonEdit{
-	color: rgb(0, 0, 0);
 	float: left;
 	font-size: 14px;
 	border: none;
@@ -40,7 +39,6 @@ contactsTable, tbody tr:hover td {
 }
 
 .buttonDelete{
-	color: rgb(0, 0, 0);
 	float: right;
 	font-size: 14px;
 	border: none;
