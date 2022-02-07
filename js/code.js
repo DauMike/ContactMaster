@@ -206,7 +206,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnDelete.className = "delete";
 //			btnDelete.value = "Delete";
 			//something else
-			btnDelete.innerHTML = '<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE92E;</i>';
+			btnDelete.innerHTML = '<i class="fas fa-pen-square"></i>';
 //			icon1.className = "fas fa-pen-square";
 			//Append Buttons to td
 			cellActions.appendChild(btnEdit);
