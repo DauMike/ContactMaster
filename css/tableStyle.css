@@ -18,13 +18,13 @@ contactsTable, th{
 	margin: 0 5px;
 	cursor: pointer;
 }
-
+/*
 contactsTable, td a{
 	font-weight: bold;
 	color: #566787;
 	display: inline-block;
 	text-decoration: none;
 	outline: none !important;
-}
+}*/
 
 
