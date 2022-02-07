@@ -4,7 +4,7 @@ tbody{
 	background: #910462;
 }
 
-contactsTable, th, td{
+contactsTable, tbody, th, td{
 	border-color: #e9e9e9;
 	padding: 12px 15px;
 	vertical-align: middle;
