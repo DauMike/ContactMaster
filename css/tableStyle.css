@@ -13,10 +13,7 @@ contactsTable, th:last-child{
 	width: 150px;
 }
 
-contactsTable, td:last-child{
-	display: block;
-	margin: auto;
-}
+
 
 contactsTable, th{
 	font-size: 16px;
