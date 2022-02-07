@@ -1,5 +1,5 @@
 contactsTable body{
-	height: 15px;
+	max-height: 15px;
 	overflow: auto;
 }
 
