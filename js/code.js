@@ -142,11 +142,6 @@ function loadContacts()
 function display(contactCount, contactFirstName, contactLastName, contactEmail, contactPhone) {
     // get handle on div
 	var container = document.getElementById('contactsTable');
- /*   var containerFirst = document.getElementById('contactListFirstName');
-	  var containerLast = document.getElementById('contactListLastName');
-	  var containerEmail = document.getElementById('contactListEmail');
-	  var containerPhone = document.getElementById('contactListPhone');
-//	var container = document.getElementsByClassName('container');*/
     // create table element
     var table = document.createElement('table');
 	var thead = document.createElement('thead');
@@ -177,24 +172,27 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
     for (i = 0; i < contactCount; i++) {
         // create tr element
         var row = document.createElement('tr');
+			//Num Column
 			var cellNum = document.createElement('td');
 			cellNum.textContent = i+1;
 			row.appendChild(cellNum);
+			//First Name Column
             var cellFirst = document.createElement('td');
             cellFirst.textContent = contactFirstName[i];
             row.appendChild(cellFirst);
-//			containerFirst.appendChild(cellFirst);
+			//Last Name Column
 			var cellLast = document.createElement('td');
             cellLast.textContent = contactLastName[i];
             row.appendChild(cellLast);
-//			containerLast.appendChild(cellLast);
+			//Email Column
 			var cellEmail = document.createElement('td');
             cellEmail.textContent = contactEmail[i];
             row.appendChild(cellEmail);
-//			containerEmail.appendChild(cellEmail);
+			//Phone Number Column
 			var cellPhone = document.createElement('td');
             cellPhone.textContent = contactPhone[i];
             row.appendChild(cellPhone);
+			//Actions Column
 			var cellActions = document.createElement('td');
 			//Edit Button
 			var btnEdit = document.createElement('input');
@@ -203,15 +201,12 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnEdit.value = "Edit";
 			btnEdit.onclick = "#editContact";
 			//Delete Button
-			var iconDelete = document.createElement('span');
-			iconDelete.className = "fas fa-pen-square";
 			var btnDelete = document.createElement('input');
-			btnDelete.type = "button";
+			btnDelete.type = "buttonDelete";
 			btnDelete.className = "delete";
-//			btnDelete.appendChild(iconDelete);
-			iconDelete.appendChild(btnDelete);
+			//Append Buttons to td
 			cellActions.appendChild(btnEdit);
-			cellActions.appendChild(iconDelete);
+			cellActions.appendChild(btnDelete);
             row.appendChild(cellActions);
         //append tr to tbody
         tbody.appendChild(row);
