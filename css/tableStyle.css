@@ -1,7 +1,3 @@
-.contactsTable{
-	background-color: black;
-}
-
 th, td{
 	border-color: #e9e9e9;
 	padding: 12px 15px;
@@ -13,15 +9,23 @@ th:first-child{
 	width: 35px;
 }
 
+th{
+	font-size: 16px;
+	margin: 0 5px;
+	height: 40px;
+	text-align: center;
+}
+
+td{
+	height: 65px;
+}
+
 th:last-child{
 	width: 150px;
 	display: inline-block;
 }
 
-th{
-	font-size: 16px;
-	margin: 0 5px;
-}
+
 
 tr:nth-of-type(odd) {
 	background-color: #fcfcfc;

@@ -146,6 +146,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
     var table = document.createElement('table');
 	var thead = document.createElement('thead');
     var tbody = document.createElement('tbody');
+	tbody.innerHTML = '{ height:200px;  overflow:scroll;}';
 	//create header
 		var hrow = document.createElement('tr');
 		var fieldNum = document.createElement('th');
