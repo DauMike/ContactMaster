@@ -29,7 +29,7 @@ contactsTable, tbody tr:hover td {
 
 .button{
 	color: #fff;
-	float: right;
+	float: left;
 	font-size: 14px;
 	border: none;
 	min-width: 50px;
