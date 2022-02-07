@@ -39,3 +39,15 @@ contactsTable, tbody tr:hover td {
 	margin-left: 15px;
 }
 
+.buttonDelete{
+	color: rgb(0, 0, 0);
+	float: left;
+	font-size: 14px;
+	border: none;
+	min-width: 50px;
+	border-radius: 5px;
+	border: none;
+	outline: none !important;
+	margin-left: 15px;
+}
+
