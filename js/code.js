@@ -157,7 +157,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 		fieldNum.textContent = "#"
 		hrow.appendChild(fieldNum);
 		var fieldName = document.createElement('th');
-		fieldName.textContent = "Name"
+		fieldName.textContent = "First Name"
 		hrow.appendChild(fieldName);
 		var fieldLast = document.createElement('th');
 		fieldLast.textContent = "Last Name"
