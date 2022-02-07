@@ -19,3 +19,12 @@ contactsTable, th{
 	cursor: pointer;
 }
 
+contactsTable, td{
+	font-weight: bold;
+	color: #566787;
+	display: inline-block;
+	text-decoration: none;
+	outline: none !important;
+}
+
+
