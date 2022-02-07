@@ -3,3 +3,10 @@ contactsTable{
 		padding: 12px 15px;
 		vertical-align: middle;
 	}
+
+	contactsTable tr th:first-child {
+		width: 60px;
+	}
+	contactsTable tr th:last-child {
+		width: 100px;
+	}
