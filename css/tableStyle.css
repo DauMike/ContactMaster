@@ -16,7 +16,6 @@ contactsTable, th:last-child{
 contactsTable, th{
 	font-size: 16px;
 	margin: 0 5px;
-	cursor: pointer;
 }
 /*
 contactsTable, td a{
