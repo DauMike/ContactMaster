@@ -204,10 +204,10 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			var btnDelete = document.createElement('input');
 			btnDelete.type = "button";
 			btnDelete.className = "buttonDelete";
-			btnDelete.value = "Delete";
+//			btnDelete.value = "Delete";
 			//something else
-			var icon1 = document.createElement('i');
-			icon1.className = "fas fa-pen-square";
+			btnDelete.innerHTML = '<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE92E;</i>';
+//			icon1.className = "fas fa-pen-square";
 			//Append Buttons to td
 			cellActions.appendChild(icon1);
 			cellActions.appendChild(btnEdit);
