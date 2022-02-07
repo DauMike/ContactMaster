@@ -195,14 +195,14 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			var cellPhone = document.createElement('td');
             cellPhone.textContent = contactPhone[i];
             row.appendChild(cellPhone);
-/*			var cellActions = document.createElement('td');
-            cellActions.textContent = contactFirstName[i];*/
+			var cellActions = document.createElement('td');
 			var btn = document.createElement('input');
 			btn.type = "button";
 			btn.className = "edit";
 			btn.value = "edit";
 			btn.onclick = "#editContact";
-            row.appendChild(btn);
+			cellActions.appendChild(btn);
+            row.appendChild(cellActions);
         //append tr to tbody
         tbody.appendChild(row);
 //		container.appendChild(row);
