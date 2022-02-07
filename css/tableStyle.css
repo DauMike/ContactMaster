@@ -1,7 +1,9 @@
-tbody{
-	max-height: min-content;
-	background: #910462;
-}
+
+#table-scroll {
+	height:150px;
+	overflow:auto;  
+	margin-top:20px;
+  }
 
 th, td{
 	border-color: #e9e9e9;
