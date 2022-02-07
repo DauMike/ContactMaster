@@ -204,7 +204,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 //			row.appendChild(cellActions);
 			var btnDelete = document.createElement('input');
 			btnDelete.type = "button";
-			btnDelete.className = "buttonDelete";
+			btnDelete.className = "btn btn-danger";
 			btnDelete.value = "Delete";
 			btnDelete.onclick = "#editContact";
 			cellActions.appendChild(btnEdit);
