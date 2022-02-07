@@ -9,5 +9,5 @@ contactsTable, th:first-child{
 
 
 contactsTable, th:last-child{
-	width: 100px;
+	width: 200px;
 }
