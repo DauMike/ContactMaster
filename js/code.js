@@ -201,13 +201,12 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnEdit.value = "Edit";
 			btnEdit.onclick = "#editContact";
 			//Delete Button
-			var btnDelete = document.createElement('input');
-			btnDelete.type = "button";
-			btnDelete.className = "delete";
+			var btnDelete = document.createElement('button');
+//			btnDelete.type = "button";
+//			btnDelete.className = "delete";
 //			btnDelete.value = "Delete";
 			//something else
 			btnDelete.innerHTML = '<i class="fas fa-pen-square"></i>';
-//			icon1.className = "fas fa-pen-square";
 			//Append Buttons to td
 			cellActions.appendChild(btnEdit);
 			cellActions.appendChild(btnDelete);
