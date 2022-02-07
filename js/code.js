@@ -203,7 +203,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			//Delete Button
 			var btnDelete = document.createElement('input');
 			btnDelete.type = "button";
-			btnDelete.className = "buttonDelete";
+			btnDelete.className = "delete";
 //			btnDelete.value = "Delete";
 			//something else
 			btnDelete.innerHTML = '<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE92E;</i>';
