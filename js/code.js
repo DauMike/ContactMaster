@@ -204,7 +204,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			var btnDelete = document.createElement('button');
 			btnDelete.className = "buttonDelete";
 //			btnDelete.innerHTML = '<a href="#deleteContact" class="btn btn-danger" data-toggle="modal"><i class="fa fa-trash"></i></a>';
-			btnDelete.innerHTML = '<a href="#deleteContact" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE92E;</i></a>';
+			btnDelete.innerHTML = '<a href="#deleteContact" class="buttonDelete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE92E;</i></a>';
 			//Append Buttons to td
 			cellActions.appendChild(btnEdit);
 			cellActions.appendChild(btnDelete);
