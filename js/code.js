@@ -202,8 +202,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnEdit.onclick = "#editContact";
 			//Delete Button
 			var btnDelete = document.createElement('button');
-//			btnDelete.type = "button";
-//			btnDelete.className = "delete";
+			btnDelete.className = "delete";
 //			btnDelete.value = "Delete";
 			//something else
 			btnDelete.innerHTML = '<i class="fa fa-trash"></i>';
