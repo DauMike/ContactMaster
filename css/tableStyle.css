@@ -7,8 +7,6 @@ contactsTable, th:first-child{
 	width: 60px;
 }
 
-
-
 contactsTable, th:last-child{
-	width: 200px;
+	width: 60px;
 }
