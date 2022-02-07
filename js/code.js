@@ -202,7 +202,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnEdit.value = "Edit";
 			btnEdit.onclick = "#editContact";
 //			row.appendChild(cellActions);
-			var iconDelete = document.createElement('icon');
+			var iconDelete = document.createElement('i');
 //			iconDelete.type = "i";
 			iconDelete.className = "fas fa-pen-square";
 			var btnDelete = document.createElement('input');
