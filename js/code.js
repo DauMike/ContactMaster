@@ -461,13 +461,39 @@ function wrapperFunction() {
 	}
  }
 //Used to format phone numbers. 
-function format_phoneNumbers()
+function format_phoneNumbers(ele,restore)
 {
-	var tell = document.querySelector('#phoneText');
-	tell.addEventListener('keyup', function(e){
-	   if (event.key != 'Backspace' && (tell.value.length === 3 || tell.value.length === 7)){
-			   tell.value += '-';
-		   }
-	});
+	var new_number,
+		selection_start = ele.selectionStart,
+		selection_end = ele.selectionEnd,
+		number = ele.value.replace(/\D/g,'');
+
+	// automatically add dashes
+	if (number.length > 2) {
+		new_number = number.substring(0,3) + '-';
+		if (number.length === 4 || number.length === 5)
+		{
+			new_number += number.substr(3);
+		}
+		else if (number.length > 5)
+		{
+			new_number += number.substring(3,6) + '-';
+		}
+		if (number.length > 6)
+		{
+			new_number += number.substring(6);
+		}
+	}
+	else
+	{
+		new_number = number;
+	}
 }
 
+/*
+ var tell = document.querySelector('#phoneText');
+ tell.addEventListener('keyup', function(e){
+	if (event.key != 'Backspace' && (tell.value.length === 3 || tell.value.length === 7)){
+			tell.value += '-';
+		}
+ });*/
