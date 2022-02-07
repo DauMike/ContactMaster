@@ -111,10 +111,6 @@ function loadContacts()
 
 	let url = urlBase + '/LoadContacts.' + extension;
 
-//	document.getElementById("contactCountResult").innerHTML = "";
-	
-	
-
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -131,14 +127,8 @@ function loadContacts()
 				contactLastName = jsonObject.lastNames;
 				contactEmail = jsonObject.emails;
 				contactPhone = jsonObject.phoneNumbers;
-//				fillTable();
+
 				display(contactCount, contactFirstName, contactLastName, contactEmail, contactPhone);
-/*				alert(contactCount);
-				alert(contactFirstName);
-				alert(contactLastName);
-				alert(contactEmail);
-				alert(contactPhone);*/
-				
 			}
 		};
 		xhr.send(jsonPayload);
@@ -147,38 +137,6 @@ function loadContacts()
 	{
 //		document.getElementById("loadingContactsResults").innerHTML = err.message;
 	}
-}
-
-function fillTable()
-{
-/*	alert(contactCount);
-    alert(contactFirstName);
-	alert(contactLastName);
-	alert(contactEmail);
-	alert(contactPhone);
-	for(var i=0; i < contactCount; i++)
-	{
-		alert(contactFirstName[i]);
-		alert(contactLastName[i]);
-		alert(contactEmail[i]);
-		alert(contactPhone[i]);
-	}
-	var table = document.createElement("table");
-	for(var i=0; i < contactCount; i++)
-	{
-		var row = table.insertRow();
-		var cell = row.insertCell();
-		cell.appendChild(document.createTextNode(contactFirstName[i]));
-	}
-	for(var i=0; i < 2; i++)
-	{
-		document.write("<tr>");
-		document.write("<td>" + contactFirstName[i] + "</td>");
-		document.write("<td>" + contactLastName[i] + "</td>");
-		document.write("<td>" + contactEmail[i] + "</td>");
-		document.write("<td>" + contactPhone[i] + "</td>");
-	}
-	return table;*/
 }
 
 function display(contactCount, contactFirstName, contactLastName, contactEmail, contactPhone) {
@@ -195,6 +153,9 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
     var tbody = document.createElement('tbody');
 	//create header
 		var hrow = document.createElement('tr');
+		var fieldNum = document.createElement('th');
+		fieldNum.textContent = "#"
+		hrow.appendChild(fieldNum);
 		var fieldName = document.createElement('th');
 		fieldName.textContent = "Name"
 		hrow.appendChild(fieldName);
@@ -213,6 +174,9 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
     for (i = 0; i < contactCount; i++) {
         // create tr element
         var row = document.createElement('tr');
+			var cellNum = document.createElement('td');
+			cellNum.textContent = i;
+			row.appendChild(cellNum);
             // create td element
             var cellFirst = document.createElement('td');
             // set text
