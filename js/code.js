@@ -205,12 +205,12 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			var btnDelete = document.createElement('input');
 			btnDelete.type = "button";
 			btnDelete.className = "btn btn-danger";
-			btnDelete.value = "Delete";
+			btnDelete.value = "";
 //			data-toggle="modal";
 //			btnDelete
 //			btnDelete.onclick = "#editContact";
 //			href="#deleteContact"
-			btnDelete.onclick = href="#deleteContact";
+//			btnDelete.onclick = href="#deleteContact";
 			cellActions.appendChild(btnEdit);
 			cellActions.appendChild(btnDelete);
             row.appendChild(cellActions);
