@@ -12,3 +12,10 @@ contactsTable, th:last-child{
 	width: 150px;
 }
 
+
+contactsTable, th{
+	font-size: 13px;
+	margin: 0 5px;
+	cursor: pointer;
+}
+
