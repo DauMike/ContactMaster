@@ -207,9 +207,10 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnDelete.className = "btn btn-danger";
 			btnDelete.value = "";
 //			<i class="material-icons">&#xE15C;</i>
-			var iconDelete = document.createElement('i');
+			var iconDelete = document.createElement('icon');
+			iconDelete.type = "i";
 			iconDelete.className = "material-icons";
-			iconDelete.value = "&#xE15C"
+			iconDelete.value = "&#xE15C";
 			btnDelete.appendChild(iconDelete);
 //			data-toggle="modal";
 //			btnDelete
