@@ -1,5 +1,5 @@
 tbody{
-	max-height: 200px;
+	max-height: min-content;
 	background: #910462;
 }
 
