@@ -32,7 +32,7 @@ contactsTable th{
 	margin: 0 5px;
 }
 
-contactsTable tr:nth-of-type(odd) {
+.contactsTable tr:nth-of-type(odd) {
 	background-color: #fcfcfc;
 }
 contactsTable tbody tr:hover td {
