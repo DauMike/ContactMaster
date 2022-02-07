@@ -17,6 +17,10 @@ contactsTable, th{
 	margin: 0 5px;
 }
 
+contactsTable, td{
+	align-items: center;
+}
+
 contactsTable, tr:nth-of-type(odd) {
 	background-color: #fcfcfc;
 }
