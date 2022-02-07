@@ -202,14 +202,12 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnEdit.value = "Edit";
 			btnEdit.onclick = "#editContact";
 //			row.appendChild(cellActions);
-			var btnDelete = document.createElement('input');
-			btnDelete.type = "button";
-			btnDelete.className = "delete";
-//			btnDelete.value = "";
-//			<i class="material-icons">&#xE15C;</i>
 			var iconDelete = document.createElement('span');
 			iconDelete.type = "icon";
 			iconDelete.className = "fas fa-pen-square";
+			var btnDelete = document.createElement('input');
+			btnDelete.type = "button";
+			btnDelete.className = "delete";
 			btnDelete.appendChild(iconDelete);
 			cellActions.appendChild(btnEdit);
 			cellActions.appendChild(btnDelete);
