@@ -170,6 +170,9 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 		hrow.appendChild(fieldPhone);
 		thead.appendChild(hrow);
 		tbody.appendChild(hrow);
+		var fieldButtons = document.createElement('th');
+		fieldButtons.textContent = "Actions"
+		hrow.appendChild(fieldButtons);
     // loop array
     for (i = 0; i < contactCount; i++) {
         // create tr element
