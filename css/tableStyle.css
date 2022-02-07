@@ -1,5 +1,6 @@
 tbody{
-	max-height: min-content;
+	max-height: 300px;
+	overflow: scroll;
 	background: #910462;
 }
 
