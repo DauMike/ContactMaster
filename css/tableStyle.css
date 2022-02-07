@@ -5,3 +5,9 @@ contactsTable, th, td{
 contactsTable, th:first-child{
 	width: 60px;
 }
+
+
+
+contactsTable, th:last-child{
+	width: 100px;
+}
