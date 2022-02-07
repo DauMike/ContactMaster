@@ -144,6 +144,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 	var container = document.getElementById('contactsTable');
     // create table element
     var table = document.createElement('table');
+	table.className = "table table-bordered table-striped mb-0";
 	var thead = document.createElement('thead');
     var tbody = document.createElement('tbody');
 	//create header
