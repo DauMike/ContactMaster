@@ -209,7 +209,6 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnDelete.innerHTML = '<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE92E;</i>';
 //			icon1.className = "fas fa-pen-square";
 			//Append Buttons to td
-			cellActions.appendChild(icon1);
 			cellActions.appendChild(btnEdit);
 			cellActions.appendChild(btnDelete);
             row.appendChild(cellActions);
