@@ -30,7 +30,7 @@ contactsTable, tr:nth-of-type(odd) {
 	background-color: #fcfcfc;
 }
 
-contactsTable, tbody tr:hover{
+contactsTable, tbody tr:hover td {
 	background: #f5f5f5;
 }
 
