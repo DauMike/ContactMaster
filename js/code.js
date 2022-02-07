@@ -208,7 +208,6 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
             row.appendChild(cellActions);
         //append tr to tbody
         tbody.appendChild(row);
-//		container.appendChild(row);
     }
     // append tbody to table
 	table.appendChild(tbody);
@@ -257,7 +256,6 @@ function addContact()
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				let resultAdd = jsonObject.match("create");
-			//	alert(jsonObject);
 
 				if(resultAdd == null)
 				{
@@ -277,7 +275,6 @@ function addContact()
 		document.getElementById("newContactResult").innerHTML = err.message;
 	}
 }
-
 
 function addUser()
 {
@@ -370,23 +367,6 @@ function searchContact()
 	}
 	
 }
-/*
-function deleteContact() {
-	// get phone number
-	let phn = document.getElementById("phoneText").value;
-
-	document.getElementById("contactDeleteResult").innerHTML = "";
-
-	let tmp = {Phone:phn,UserID:userId};
-	let jsonPayload = JSON.stringify( tmp );
-
-	let url = urlBase + '/Delete.' + extension;
-
-	// search by phone number
-
-	// delete contact
-
-}*/
 
 function deleteContact() {
 	let phn = document.getElementById("phoneText").value;
@@ -394,7 +374,6 @@ function deleteContact() {
 	document.getElementById("contactDeleteResult").innerHTML = "";
 
 	let tmp = {phone:phn,userid:userId};
-	//alert(phn);
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/Delete.' + extension;
@@ -411,17 +390,14 @@ function deleteContact() {
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				let resultDelete = jsonObject.match("delete");
-				//alert(jsonObject);
 
 				if(resultDelete == null)
 				{
-					//alert("No deletion happened");
 					document.getElementById("contactDeleteResult").innerHTML = "Contact Does Not Exist";
 					return;
 				}
 				else
 				{
-					//alert("Termination successful");
 					document.getElementById("contactDeleteResult").innerHTML = "Deletion Successful";
 				}
 			}
@@ -465,7 +441,6 @@ function wrapperFunction() {
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				let resultEdit = jsonObject.match("update");
-			//	alert(jsonObject);
 
 				if(resultEdit === null)
 				{
@@ -485,3 +460,10 @@ function wrapperFunction() {
 		document.getElementById("editResult").innerHTML = err.message;
 	}
  }
+//Used to format phone numbers. 
+ var tell = document.querySelector('#phoneText');
+ tell.addEventListener('keyup', function(e){
+	if (event.key != 'Backspace' && (tell.value.length === 3 || tell.value.length === 7)){
+			tell.value += '-';
+		}
+ });
