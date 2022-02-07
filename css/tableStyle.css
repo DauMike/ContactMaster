@@ -5,6 +5,11 @@ contactsTable, th, td{
 	text-align: center;
 }
 
+contactsTable, tbody{
+	height: 150px;
+	overflow: auto;
+}
+
 contactsTable, th:first-child{
 	width: 35px;
 }
