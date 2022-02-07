@@ -1,6 +1,5 @@
 tbody{
-	max-height: min-content;
-	overflow: auto;
+
 	background: #910462;
 }
 
@@ -9,6 +8,8 @@ contactsTable, tbody, th, td{
 	padding: 12px 15px;
 	vertical-align: middle;
 	text-align: center;
+	max-height: min-content;
+	overflow: auto;
 }
 
 contactsTable, th:first-child{
