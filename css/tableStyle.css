@@ -1,7 +1,3 @@
-tbody{
-
-	background: #910462;
-}
 
 contactsTable, tbody, th, td{
 	border-color: #e9e9e9;
@@ -10,6 +6,7 @@ contactsTable, tbody, th, td{
 	text-align: center;
 	max-height: min-content;
 	overflow: auto;
+	background: #910462;
 }
 
 contactsTable, th:first-child{
