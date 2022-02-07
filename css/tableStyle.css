@@ -14,7 +14,8 @@ contactsTable, th:last-child{
 }
 
 contactsTable, td:last-child{
-	text-align: center;
+	display: block;
+	margin: auto;
 }
 
 contactsTable, th{
