@@ -238,7 +238,6 @@ function addContact()
 	let phoneNumber = document.getElementById("newContactPhoneNumber").value;
 
 	phoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d+)/, '$1-$2-$3');
-	alert(phoneNumber);
 
 	document.getElementById("newContactResult").innerHTML = "";
 
