@@ -1,5 +1,5 @@
 contactsTable, tbody{
-	max-height: 15px;
+	max-height: 1px;
 	overflow: auto;
 	background: #910462;
 }
