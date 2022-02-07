@@ -1,7 +1,3 @@
-thead, tbody{
-	display: block;
-}
-
 tbody{
 	max-height: 1px;
 	overflow: auto;
