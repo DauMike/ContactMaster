@@ -1,12 +1,12 @@
-contactsTable{
+contactsTable.table{
 		border-color: #e9e9e9;
 		padding: 12px 15px;
 		vertical-align: middle;
 	}
 
-	contactsTable tr th:first-child {
+	contactsTable.table tr th:first-child {
 		width: 60px;
 	}
-	contactsTable tr th:last-child {
+	contactsTable.table tr th:last-child {
 		width: 100px;
 	}
