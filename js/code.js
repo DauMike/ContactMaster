@@ -203,12 +203,10 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnEdit.onclick = "#editContact";
 //			row.appendChild(cellActions);
 			var iconDelete = document.createElement('i');
-//			iconDelete.type = "i";
 			iconDelete.className = "fas fa-pen-square";
 			var btnDelete = document.createElement('input');
 			btnDelete.type = "button";
 			btnDelete.className = "delete";
-			btnDelete.value = iconDelete;
 			btnDelete.appendChild(iconDelete);
 			cellActions.appendChild(btnEdit);
 			cellActions.appendChild(btnDelete);
