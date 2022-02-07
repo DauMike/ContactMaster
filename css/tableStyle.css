@@ -1,11 +1,5 @@
 contactsTable, th, td{
 	border: 1px solid rgb(211, 82, 236);
-}
-
-contactsTable tr tr:first-child{
 	width: 60px;
 }
 
-contactsTable tr th:last-child {
-	width: 100px;
-}
