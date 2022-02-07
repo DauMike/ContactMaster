@@ -207,9 +207,8 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnDelete.className = "buttonDelete";
 //			btnDelete.value = "";
 //			<i class="material-icons">&#xE15C;</i>
-			var iconDelete = document.createElement('icon');
+			var iconDelete = document.createElement('span');
 			iconDelete.className = "fas fa-pen-square";
-//			iconDelete.value = "&#xE15C";
 			btnDelete.appendChild(iconDelete);
 //			data-toggle="modal";
 //			btnDelete
