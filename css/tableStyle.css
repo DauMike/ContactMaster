@@ -9,7 +9,7 @@ contactsTable, th:first-child{
 }
 
 contactsTable, th:last-child{
-	width: 60px;
+	width: 150px;
 }
 
 contactsTable, th{
