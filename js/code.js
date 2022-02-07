@@ -210,8 +210,8 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnDelete.className = "delete";
 //			btnDelete.appendChild(iconDelete);
 			iconDelete.appendChild(btnDelete);
+			cellActions.appendChild(btnEdit);
 			cellActions.appendChild(iconDelete);
-			cellActions.appendChild(btnDelete);
             row.appendChild(cellActions);
         //append tr to tbody
         tbody.appendChild(row);
