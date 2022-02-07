@@ -1,10 +1,10 @@
 tbody{
 	max-height: 300px;
-	overflow-y: auto;
+	overflow: auto;
 	background: #910462;
 }
 
-th, td{
+contactsTable th, contactsTable td{
 	border-color: #e9e9e9;
 	padding: 12px 15px;
 	vertical-align: middle;
