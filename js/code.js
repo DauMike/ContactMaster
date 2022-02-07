@@ -461,9 +461,13 @@ function wrapperFunction() {
 	}
  }
 //Used to format phone numbers. 
- var tell = document.querySelector('#phoneText');
- tell.addEventListener('keyup', function(e){
-	if (event.key != 'Backspace' && (tell.value.length === 3 || tell.value.length === 7)){
-			tell.value += '-';
-		}
- });
+function format_phoneNumbers()
+{
+	var tell = document.querySelector('#phoneText');
+	tell.addEventListener('keyup', function(e){
+	   if (event.key != 'Backspace' && (tell.value.length === 3 || tell.value.length === 7)){
+			   tell.value += '-';
+		   }
+	});
+}
+
