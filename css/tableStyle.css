@@ -11,7 +11,6 @@ contactsTable, th:first-child{
 
 contactsTable, th:last-child{
 	width: 150px;
-	display: inline-block;
 }
 
 contactsTable, th{
