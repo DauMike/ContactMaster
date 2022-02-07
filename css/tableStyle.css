@@ -3,6 +3,8 @@ contactsTable, th, td{
 	padding: 12px 15px;
 	vertical-align: middle;
 	text-align: center;
+	height: 150px;
+	overflow: auto;
 }
 
 contactsTable{
