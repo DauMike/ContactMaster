@@ -28,13 +28,14 @@ contactsTable, tbody tr:hover td {
 }
 
 .buttonEdit{
-	color: #FFC107;
+	background-color: #FFC107;
 	float: left;
 	font-size: 14px;
 	border: none;
 	min-width: 50px;
 	border-radius: 5px;
 	border: none;
+	outline: none !important;
 	margin-left: 15px;
 }
 
