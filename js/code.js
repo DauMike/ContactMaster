@@ -201,7 +201,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnEdit.onclick = "#editContact";
 			//Delete Button
 			var btnDelete = document.createElement('button');
-			btnDelete.className = "delete";
+			btnDelete.className = "buttonDelete";
 			btnDelete.innerHTML = '<i class="fa fa-trash"></i>';
 			//Append Buttons to td
 			cellActions.appendChild(btnEdit);
