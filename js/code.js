@@ -197,13 +197,10 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			//Edit Button
 			var btnEdit = document.createElement('button');
 			btnEdit.className = "buttonEdit";
-//			btnEdit.innerHTML = '<i class="fas fa-pen"></i>';
 			btnEdit.innerHTML = '<a href="#editContact" class="buttonEdit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>';
-			btnEdit.onclick = "#editContact";
 			//Delete Button
 			var btnDelete = document.createElement('button');
 			btnDelete.className = "buttonDelete";
-//			btnDelete.innerHTML = '<a href="#deleteContact" class="btn btn-danger" data-toggle="modal"><i class="fa fa-trash"></i></a>';
 			btnDelete.innerHTML = '<a href="#deleteContact" class="buttonDelete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE92E;</i></a>';
 			//Append Buttons to td
 			cellActions.appendChild(btnEdit);
