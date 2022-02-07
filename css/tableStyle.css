@@ -46,9 +46,7 @@ contactsTable, tbody tr:hover td {
 	font-size: 16px;
 	border: none;
 	min-width: 50px;
-	border-radius: 5px;
 	border: none;
 	outline: none !important;
-	margin-left: 15px;
 }
 
