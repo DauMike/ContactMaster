@@ -40,6 +40,7 @@ contactsTable, tbody tr:hover td {
 }
 
 .buttonDelete{
+	background-color: #ff1100;
 	float: right;
 	font-size: 14px;
 	border: none;
