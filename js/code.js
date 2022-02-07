@@ -166,7 +166,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 		fieldEmail.textContent = "Email"
 		hrow.appendChild(fieldEmail);
 		var fieldPhone = document.createElement('th');
-		fieldPhone.textContent = "Phone"
+		fieldPhone.textContent = "Phone Number"
 		hrow.appendChild(fieldPhone);
 		thead.appendChild(hrow);
 		tbody.appendChild(hrow);
