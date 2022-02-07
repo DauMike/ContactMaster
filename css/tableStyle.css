@@ -2,7 +2,6 @@ contactsTable, th, td{
 	border-color: #e9e9e9;
 	padding: 12px 15px;
 	vertical-align: middle;
-	text-align: center;
 }
 
 contactsTable, th:first-child{
@@ -13,11 +12,10 @@ contactsTable, th:last-child{
 	width: 150px;
 }
 
-
-
 contactsTable, th{
 	font-size: 16px;
 	margin: 0 5px;
+	text-align: center;
 }
 
 contactsTable, tr:nth-of-type(odd) {
