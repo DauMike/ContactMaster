@@ -3,5 +3,9 @@ contactsTable, th, td{
 }
 
 contactsTable tr tr:first-child{
-	
+	width: 60px;
+}
+
+contactsTable tr th:last-child {
+	width: 100px;
 }
