@@ -208,8 +208,9 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			var btnDelete = document.createElement('input');
 			btnDelete.type = "button";
 			btnDelete.className = "delete";
-			btnDelete.appendChild(iconDelete);
-			cellActions.appendChild(btnEdit);
+//			btnDelete.appendChild(iconDelete);
+			iconDelete.appendChild(btnDelete);
+			cellActions.appendChild(iconDelete);
 			cellActions.appendChild(btnDelete);
             row.appendChild(cellActions);
         //append tr to tbody
