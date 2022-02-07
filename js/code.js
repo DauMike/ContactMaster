@@ -201,7 +201,13 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnEdit.className = "edit";
 			btnEdit.value = "Edit";
 			btnEdit.onclick = "#editContact";
-			cellActions.appendChild(btnEdit);
+			row.appendChild(cellActions);
+			var btnDelete = document.createElement('input');
+			btnDelete.type = "button";
+			btnDelete.className = "edit";
+			btnDelete.value = "Edit";
+			btnDelete.onclick = "#editContact";
+			cellActions.appendChild(btnDelete);
             row.appendChild(cellActions);
         //append tr to tbody
         tbody.appendChild(row);
