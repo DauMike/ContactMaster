@@ -141,7 +141,7 @@ function loadContacts()
 
 function display(contactCount, contactFirstName, contactLastName, contactEmail, contactPhone) {
     // get handle on div
-	var container = document.getElementById('table.table');
+	var container = document.getElementById('table-striped');
  /*   var containerFirst = document.getElementById('contactListFirstName');
 	  var containerLast = document.getElementById('contactListLastName');
 	  var containerEmail = document.getElementById('contactListEmail');
