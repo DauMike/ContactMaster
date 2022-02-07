@@ -195,16 +195,13 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			//Actions Column
 			var cellActions = document.createElement('td');
 			//Edit Button
-			var btnEdit = document.createElement('input');
-			btnEdit.type = "button";
+			var btnEdit = document.createElement('button');
 			btnEdit.className = "buttonEdit";
-			btnEdit.value = "Edit";
+			btnEdit.innerHTML = '<i class="fas fa-pen"></i>';
 			btnEdit.onclick = "#editContact";
 			//Delete Button
 			var btnDelete = document.createElement('button');
 			btnDelete.className = "delete";
-//			btnDelete.value = "Delete";
-			//something else
 			btnDelete.innerHTML = '<i class="fa fa-trash"></i>';
 			//Append Buttons to td
 			cellActions.appendChild(btnEdit);
