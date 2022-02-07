@@ -197,7 +197,8 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			//Edit Button
 			var btnEdit = document.createElement('button');
 			btnEdit.className = "buttonEdit";
-			btnEdit.innerHTML = '<i class="fas fa-pen"></i>';
+//			btnEdit.innerHTML = '<i class="fas fa-pen"></i>';
+			btnEdit.innerHTML = '<a href="#editContact" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>';
 			btnEdit.onclick = "#editContact";
 			//Delete Button
 			var btnDelete = document.createElement('button');
