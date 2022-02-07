@@ -144,7 +144,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 	var container = document.getElementById('contactsTable');
     // create table element
 	var wrapper = document.createElement('div');
-	wrapper.innerHTML = '<table class="table table-bordered table-striped mb-0">';
+	wrapper.innerHTML = '<div class="table-wrapper-scroll-y my-custom-scrollbar">';
     var table = document.createElement('table');
 	var thead = document.createElement('thead');
     var tbody = document.createElement('tbody');
