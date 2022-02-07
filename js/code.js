@@ -175,31 +175,22 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
         // create tr element
         var row = document.createElement('tr');
 			var cellNum = document.createElement('td');
-			cellNum.textContent = i;
+			cellNum.textContent = i+1;
 			row.appendChild(cellNum);
-            // create td element
             var cellFirst = document.createElement('td');
-            // set text
             cellFirst.textContent = contactFirstName[i];
-            // append td to tr
             row.appendChild(cellFirst);
 //			containerFirst.appendChild(cellFirst);
 			var cellLast = document.createElement('td');
-            // set text
             cellLast.textContent = contactLastName[i];
-            // append td to tr
             row.appendChild(cellLast);
 //			containerLast.appendChild(cellLast);
 			var cellEmail = document.createElement('td');
-            // set text
             cellEmail.textContent = contactEmail[i];
-            // append td to tr
             row.appendChild(cellEmail);
 //			containerEmail.appendChild(cellEmail);
 			var cellPhone = document.createElement('td');
-            // set text
             cellPhone.textContent = contactPhone[i];
-            // append td to tr
             row.appendChild(cellPhone);
 //			containerPhone.appendChild(cellPhone);
         //append tr to tbody
