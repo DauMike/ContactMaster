@@ -1,4 +1,10 @@
 
+#table-scroll {
+	max-height:150px;
+	overflow:auto;  
+
+  }
+
 th, td{
 	border-color: #e9e9e9;
 	padding: 12px 15px;
