@@ -10,8 +10,9 @@ contactsTable, th:first-child{
 }
 
 contactsTable, th:last-child{
-	width: 300px;
+	width: 150px;
 	display: inline-block;
+	margin-left: 5px;
 }
 
 contactsTable, th{
