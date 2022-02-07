@@ -10,6 +10,7 @@ contactsTable, th:first-child{
 
 contactsTable, th:last-child{
 	width: 150px;
+	text-align: center;
 }
 
 contactsTable, td:last-child{
