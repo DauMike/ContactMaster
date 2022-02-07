@@ -3,7 +3,7 @@ contactsTable, th, td{
 }
 
 contactsTable, th:first-child{
-	width: 20px;
+	width: 30px;
 }
 
 contactsTable, th:last-child{
