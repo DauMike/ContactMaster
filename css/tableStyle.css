@@ -26,7 +26,7 @@ contactsTable, td a{
 	outline: none !important;
 }*/
 
-contactsTable, tr:nth-of-type(even) {
+contactsTable, tr:nth-of-type(odd) {
 	background-color: #fcfcfc;
 }
 
