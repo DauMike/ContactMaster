@@ -13,7 +13,7 @@ contactsTable, th:last-child{
 	width: 150px;
 }
 
-contactsTable, tbody td:last-child{
+contactsTable, tbody td:last-child td{
 	display: inline-block;
 }
 
