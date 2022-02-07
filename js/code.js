@@ -196,13 +196,14 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
             cellPhone.textContent = contactPhone[i];
             row.appendChild(cellPhone);
 			var cellActions = document.createElement('td');
+			//Edit Button
 			var btnEdit = document.createElement('input');
 			btnEdit.type = "button";
 			btnEdit.className = "buttonEdit";
 			btnEdit.value = "Edit";
 			btnEdit.onclick = "#editContact";
-//			row.appendChild(cellActions);
-			var iconDelete = document.createElement('i');
+			//Delete Button
+			var iconDelete = document.createElement('span');
 			iconDelete.className = "fas fa-pen-square";
 			var btnDelete = document.createElement('input');
 			btnDelete.type = "button";
