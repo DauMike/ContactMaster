@@ -175,7 +175,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
         // create tr element
         var row = document.createElement('tr');
 			var cellNum = document.createElement('td');
-			cellNum.textContent = i+100;
+			cellNum.textContent = i+1;
 			row.appendChild(cellNum);
             var cellFirst = document.createElement('td');
             cellFirst.textContent = contactFirstName[i];
