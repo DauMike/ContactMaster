@@ -1,4 +1,4 @@
-contactsTable tbody{
+.tbody{
 	max-height: 15px;
 	overflow: auto;
 }
