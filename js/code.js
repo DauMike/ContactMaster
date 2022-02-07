@@ -143,6 +143,8 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
     // get handle on div
 	var container = document.getElementById('contactsTable');
     // create table element
+	var wrapper = document.createElement('div');
+	wrapper.innerHTML = '<div id="table-scroll">';
     var table = document.createElement('table');
 	var thead = document.createElement('thead');
     var tbody = document.createElement('tbody');
@@ -211,8 +213,10 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
     }
     // append tbody to table
 	table.appendChild(tbody);
+	wrapper.appendChild(table);
     // append table to container
-    container.appendChild(table);
+    container.appendChild(wrapper);
+
 }
 display();
 
