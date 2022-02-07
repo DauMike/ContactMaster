@@ -207,7 +207,8 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnDelete.className = "delete";
 			btnDelete.value = "Delete";
 			btnDelete.onclick = "#editContact";
-			cellActions.appendChild(btnEdit,btnDelete);
+			cellActions.appendChild(btnEdit);
+			cellActions.appendChild(btnDelete);
             row.appendChild(cellActions);
         //append tr to tbody
         tbody.appendChild(row);
