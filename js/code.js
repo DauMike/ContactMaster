@@ -208,8 +208,8 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnDelete.value = "";
 //			<i class="material-icons">&#xE15C;</i>
 			var iconDelete = document.createElement('span');
-			iconDelete.className = "material-icons";
-			iconDelete.value = "&#xE15C";
+			iconDelete.className = "fas fa-pen-square";
+//			iconDelete.value = "&#xE15C";
 			btnDelete.appendChild(iconDelete);
 //			data-toggle="modal";
 //			btnDelete
