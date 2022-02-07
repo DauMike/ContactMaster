@@ -205,7 +205,11 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			btnDelete.type = "button";
 			btnDelete.className = "buttonDelete";
 			btnDelete.value = "Delete";
+			//something else
+			var icon1 = document.createElement('i');
+			icon1.className = "fas fa-pen-square";
 			//Append Buttons to td
+			cellActions.appendChild(icon1);
 			cellActions.appendChild(btnEdit);
 			cellActions.appendChild(btnDelete);
             row.appendChild(cellActions);
