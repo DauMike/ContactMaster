@@ -198,7 +198,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			var cellActions = document.createElement('td');
 			var btnEdit = document.createElement('input');
 			btnEdit.type = "button";
-			btnEdit.className = "button";
+			btnEdit.className = "buttonEdit";
 			btnEdit.value = "Edit";
 			btnEdit.onclick = "#editContact";
 //			row.appendChild(cellActions);
