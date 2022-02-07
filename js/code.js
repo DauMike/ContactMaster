@@ -237,6 +237,9 @@ function addContact()
 	let email = document.getElementById("newContactEmail").value;
 	let phoneNumber = document.getElementById("newContactPhoneNumber").value;
 
+	phoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d+)/, '$1-$2-$3');
+	alert(phoneNumber);
+
 	document.getElementById("newContactResult").innerHTML = "";
 
 	let tmp = {userid:userId, firstname:firstName, lastname:lastName, email:email, phone:phoneNumber};
@@ -424,7 +427,6 @@ function wrapperFunction() {
 	let phonenumber = document.getElementById("phoneNumber").value;
 
 	phonenumber = phonenumber.replace(/(\d{3})(\d{3})(\d+)/, '$1-$2-$3');
-	alert(phonenumber);
 
 	document.getElementById("editResult").innerHTML = "";
 
