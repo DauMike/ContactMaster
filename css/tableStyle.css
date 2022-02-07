@@ -28,7 +28,7 @@ contactsTable, tbody tr:hover td {
 }
 
 .buttonEdit{
-	background-color: #FFC107;
+	color: #FFC107;
 	float: left;
 	font-size: 14px;
 	border: none;
