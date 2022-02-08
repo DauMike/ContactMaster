@@ -146,7 +146,6 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
     var table = document.createElement('table');
 	var thead = document.createElement('thead');
     var tbody = document.createElement('tbody');
-	tbody.innerHTML = '{ height:200px;  overflow:scroll;}';
 	//create header
 		var hrow = document.createElement('tr');
 		var fieldNum = document.createElement('th');
@@ -198,6 +197,7 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
 			//Edit Button
 			var btnEdit = document.createElement('button');
 			btnEdit.className = "buttonEdit";
+			btnEdit.value = i;
 			btnEdit.innerHTML = '<a href="#editContact" class="buttonEdit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>';
 			//Delete Button
 			var btnDelete = document.createElement('button');
@@ -347,7 +347,7 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
+				document.getElementById("contactSearchResult").innerHTML = "Contact has been retrieved";
 				let jsonObject = JSON.parse( xhr.responseText );
 				
 				for( let i=0; i<jsonObject.results.length; i++ )

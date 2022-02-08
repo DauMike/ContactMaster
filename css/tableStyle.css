@@ -1,6 +1,5 @@
-contactsTable tbody{
+tbody{
 	overflow: scroll;
-	background-color: black;
 }
 
 th, td{
