@@ -1,4 +1,4 @@
-tbody{
+contactsTable tbody{
 	overflow: scroll;
 	background-color: black;
 }
@@ -29,8 +29,6 @@ th:last-child{
 	width: 150px;
 	display: inline-block;
 }
-
-
 
 tr:nth-of-type(odd) {
 	background-color: #fcfcfc;
