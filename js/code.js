@@ -4,6 +4,7 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
+let contactList = "";
 
 
 function doLogin()
@@ -331,9 +332,9 @@ function searchContact()
 	let srch = document.getElementById("searchText").value;
 	document.getElementById("contactSearchResult").innerHTML = "";
 	
-	let contactList = "";
+	contactList = "";
 
-	let tmp = {search:srch,userId:userId};
+	let tmp = {search:srch,userid:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/Search.' + extension;
@@ -347,7 +348,7 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("contactSearchResult").innerHTML = "Contact has been retrieved";
+				document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
 				let jsonObject = JSON.parse( xhr.responseText );
 				
 				for( let i=0; i<jsonObject.results.length; i++ )
@@ -358,6 +359,7 @@ function searchContact()
 						contactList += "<br />\r\n";
 					}
 				}
+				console.log(contactList);
 				
 				document.getElementsByTagName("p")[0].innerHTML = contactList;
 			}
