@@ -358,7 +358,7 @@ function searchContact()
 						contactList += "<br />\r\n";
 					}
 				}
-				console.log(contactList);
+				//console.log(contactList);
 				
 				document.getElementsByTagName("p")[0].innerHTML = contactList;
 			}
