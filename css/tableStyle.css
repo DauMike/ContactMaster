@@ -58,8 +58,8 @@ tbody tr:hover td {
 
 #searchText{
 	margin-left: 15%;
-	padding:15px;
-	border-radius: 10px;
+	padding:1px;
+	border-radius: 1px;
   }
 
   input[type=text] {
