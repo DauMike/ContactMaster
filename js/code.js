@@ -557,6 +557,41 @@ function wrapperFunction() {
 	}
  }
 
+ function notLoadAllContacts()
+ {
+	clearContactsTable();
+	let srch = document.getElementById("searchText").value;
+
+	let tmp = {search:srch,userid:userId};
+	let jsonPayload = JSON.stringify(tmp);
+
+	let url = urlBase + '/SearchContacts.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				let jsonObject = JSON.parse( xhr.responseText );	
+				if(jsonObject.id == "0")
+				{
+					clearContactsTable();
+					return;
+				}
+				fillTable(jsonObject,true);
+				
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err){}
+ }
+
+
  function loadContacts()
 {
 	clearContactsTable();
