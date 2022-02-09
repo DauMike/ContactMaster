@@ -81,4 +81,5 @@ tbody tr:hover td {
 
 .contactsList{
   display: list-item;    
+  list-style-type: none;
  } 
