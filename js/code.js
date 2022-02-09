@@ -4,6 +4,7 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
+let contactList = "";
 
 
 function doLogin()
@@ -331,7 +332,7 @@ function searchContact()
 	let srch = document.getElementById("searchText").value;
 	document.getElementById("contactSearchResult").innerHTML = "";
 	
-	let contactList = "";
+	contactList = "";
 
 	let tmp = {search:srch,userid:userId};
 	let jsonPayload = JSON.stringify( tmp );
@@ -358,7 +359,7 @@ function searchContact()
 						contactList += "<br />\r\n";
 					}
 				}
-				//console.log(contactList);
+				console.log(contactList);
 				
 				document.getElementsByTagName("p")[0].innerHTML = contactList;
 			}
