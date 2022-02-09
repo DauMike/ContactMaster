@@ -214,9 +214,9 @@ function display(contactCount, contactFirstName, contactLastName, contactEmail, 
     // append tbody to table
 	table.appendChild(tbody);
     // append table to container
-    container.appendChild(table);
+   // container.appendChild(table);
 }
-display();
+//display();
 
 function doLogout()
 {
