@@ -4,8 +4,6 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
-let contactListDisplay = "";
-
 
 function doLogin()
 {
@@ -98,125 +96,6 @@ function readCookie()
 		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
 	}
 }
-/*
-function loadContacts()
-{
-	let contactCount = 0;
-	let contactFirstName = "";
-	let contactLastName = "";
-	let contactEmail = "";
-	let contactPhone = "";
-
-	let tmp = {userid:userId};
-	let jsonPayload = JSON.stringify(tmp);
-
-	let url = urlBase + '/LoadContacts.' + extension;
-
-	let xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	try
-	{
-		xhr.onreadystatechange = function()
-		{
-			if (this.readyState == 4 && this.status == 200)
-			{
-				let jsonObject = JSON.parse( xhr.responseText );	
-
-				contactCount = jsonObject.contactCount;
-				contactFirstName = jsonObject.firstNames;
-				contactLastName = jsonObject.lastNames;
-				contactEmail = jsonObject.emails;
-				contactPhone = jsonObject.phoneNumbers;
-
-				display(contactCount, contactFirstName, contactLastName, contactEmail, contactPhone);
-			}
-		};
-		xhr.send(jsonPayload);
-	}
-	catch(err)
-	{
-//		document.getElementById("loadingContactsResults").innerHTML = err.message;
-	}
-}
-
-function display(contactCount, contactFirstName, contactLastName, contactEmail, contactPhone) {
-    // get handle on div
-	var container = document.getElementById('contactsTable');
-    // create table element
-    var table = document.createElement('table');
-	var thead = document.createElement('thead');
-    var tbody = document.createElement('tbody');
-	//create header
-		var hrow = document.createElement('tr');
-		var fieldNum = document.createElement('th');
-		fieldNum.textContent = "#"
-		hrow.appendChild(fieldNum);
-		var fieldName = document.createElement('th');
-		fieldName.textContent = "First Name"
-		hrow.appendChild(fieldName);
-		var fieldLast = document.createElement('th');
-		fieldLast.textContent = "Last Name"
-		hrow.appendChild(fieldLast);
-		var fieldEmail = document.createElement('th');
-		fieldEmail.textContent = "Email"
-		hrow.appendChild(fieldEmail);
-		var fieldPhone = document.createElement('th');
-		fieldPhone.textContent = "Phone Number"
-		hrow.appendChild(fieldPhone);
-		thead.appendChild(hrow);
-		tbody.appendChild(hrow);
-		var fieldButtons = document.createElement('th');
-		fieldButtons.textContent = "Actions"
-		hrow.appendChild(fieldButtons);
-    // loop array
-    for (i = 0; i < contactCount; i++) {
-        // create tr element
-        var row = document.createElement('tr');
-			//Num Column
-			var cellNum = document.createElement('td');
-			cellNum.textContent = i+1;
-			row.appendChild(cellNum);
-			//First Name Column
-            var cellFirst = document.createElement('td');
-            cellFirst.textContent = contactFirstName[i];
-            row.appendChild(cellFirst);
-			//Last Name Column
-			var cellLast = document.createElement('td');
-            cellLast.textContent = contactLastName[i];
-            row.appendChild(cellLast);
-			//Email Column
-			var cellEmail = document.createElement('td');
-            cellEmail.textContent = contactEmail[i];
-            row.appendChild(cellEmail);
-			//Phone Number Column
-			var cellPhone = document.createElement('td');
-            cellPhone.textContent = contactPhone[i];
-            row.appendChild(cellPhone);
-			//Actions Column
-			var cellActions = document.createElement('td');
-			//Edit Button
-			var btnEdit = document.createElement('button');
-			btnEdit.className = "buttonEdit";
-			btnEdit.value = i;
-			btnEdit.innerHTML = '<a href="#editContact" class="buttonEdit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>';
-			//Delete Button
-			var btnDelete = document.createElement('button');
-			btnDelete.className = "buttonDelete";
-			btnDelete.innerHTML = '<a href="#deleteContact" class="buttonDelete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE92E;</i></a>';
-			//Append Buttons to td
-			cellActions.appendChild(btnEdit);
-			cellActions.appendChild(btnDelete);
-            row.appendChild(cellActions);
-        //append tr to tbody
-        tbody.appendChild(row);
-    }
-    // append tbody to table
-	table.appendChild(tbody);
-    // append table to container
-   // container.appendChild(table);
-}
-//display();*/
 
 function doLogout()
 {
@@ -238,8 +117,6 @@ function addContact()
 	let lastName = document.getElementById("newContactLastName").value;
 	let email = document.getElementById("newContactEmail").value;
 	let phoneNumber = document.getElementById("newContactPhoneNumber").value;
-
-	phoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d+)/, '$1-$2-$3');
 
 	document.getElementById("newContactResult").innerHTML = "";
 
@@ -327,6 +204,7 @@ function addUser()
 	}
 }
 
+/*
 function searchContact()
 {
 	let srch = document.getElementById("searchText").value;
@@ -458,12 +336,10 @@ function loadAllContacts()
 	{
 		document.getElementById("contactSearchResult").innerHTML = err.message;
 	}
-}
-
+}*/
 
 function deleteContact() {
 	let phn = document.getElementById("phoneText").value;
-	phn = phn.replace(/(\d{3})(\d{3})(\d+)/, '$1-$2-$3');
 
 	document.getElementById("contactDeleteResult").innerHTML = "";
 
@@ -508,15 +384,13 @@ function wrapperFunction() {
 	addUser();
 	window.location.href = 'index.html';
  }
-
+/*
  function editContact()
  {
 	let newFirstName = document.getElementById("firstName").value;
 	let newLastName = document.getElementById("lastName").value;
 	let newEmail = document.getElementById("email").value;
 	let phonenumber = document.getElementById("phoneNumber").value;
-
-	phonenumber = phonenumber.replace(/(\d{3})(\d{3})(\d+)/, '$1-$2-$3');
 
 	document.getElementById("editResult").innerHTML = "";
 
@@ -555,12 +429,18 @@ function wrapperFunction() {
 	{
 		document.getElementById("editResult").innerHTML = err.message;
 	}
- }
+ }*/
 
  function notLoadAllContacts()
  {
 	clearContactsTable();
 	let srch = document.getElementById("searchText").value;
+
+	if(srch === "")
+	{
+		clearContactsTable();
+		return;
+	}
 
 	let tmp = {search:srch,userid:userId};
 	let jsonPayload = JSON.stringify(tmp);
@@ -590,7 +470,6 @@ function wrapperFunction() {
 	}
 	catch(err){}
  }
-
 
  function loadContacts()
 {
@@ -699,7 +578,6 @@ function addRowToTable(cId,firstName,lastName,phone,email,isActionEnable)
 	return row;
 }
 
-
 function onCheckBox(checkBoxObj){
 	console.log(checkBoxObj);
 	if(!checkBoxObj.checked){
@@ -726,7 +604,7 @@ function updateContactField(id) {
 
 	//deleteInfoFromEditFields();
 }
-/*
+
 function editContact()
 {
    let newFirstName = document.getElementById("firstName").value;
@@ -743,7 +621,7 @@ function editContact()
 
    document.getElementById("editResult").innerHTML = "";
 
-   let tmp = {/*userid:userId,*//* cid:cId, firstname:newFirstName, lastname:newLastName, email:newEmail, phone:phoneNumber}
+   let tmp = {userid:userId/*, cid:cId*/, firstname:newFirstName, lastname:newLastName, email:newEmail, phone:phoneNumber}
    let jsonPayload = JSON.stringify( tmp );
    
    let url = urlBase + '/Update.' + extension;
@@ -760,7 +638,6 @@ function editContact()
 		   {
 			   let jsonObject = JSON.parse( xhr.responseText );
 			   let resultEdit = jsonObject.match("update");
-		   //	alert(jsonObject);
 
 			   if(resultEdit === null)
 			   {
@@ -786,7 +663,7 @@ function editContact()
    {
 	   document.getElementById("editResult").innerHTML = err.message;
    }
-}*/
+}
 // clear up all the contacts from the table
 function clearContactsTable() {
 	const parent = document.getElementById('contactListTable');
@@ -804,7 +681,6 @@ function clearAddForm() {
 	document.getElementById('newContactEmail').value = '';
 	document.getElementById('newContactPhoneNumber').value = '';	
 }
-
 
 function getSelRowIdsRemove(cId){
 	const parent = document.getElementById('contactListTable');
@@ -832,6 +708,7 @@ function getSelRowIdsRemove(cId){
 
 	return cIds;	
 }
+
 function onDeleteContact(id){	
 	const row = document.getElementById(id).parentElement.parentElement;
 
