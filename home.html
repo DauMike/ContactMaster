@@ -67,11 +67,11 @@ $(document).ready(function(){
                             <a href="#addContact" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Contact</span></a>
                             <a href="#editContact" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE254;</i><span>Edit a Contact</span></a>
                             <a href="#deleteContact" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a> 	
+							
 							<div class="input-group">
 							<input type="search" id="searchText" class="form-control rounded" onkeyup="searchContact()" placeholder="Search Contacts" aria-label="Search" aria-describedby="search-addon" />
 							<!--<input id="searchbar" onkeyup="searchContact()" type="text" name="search" placeholder="Search Contacts">-->
-								<button type="button" class="btn btn-info btn-md" onclick="loadContacts();">Load All Contacts</button>
-								<button type="button" class="btn btn-info btn-md" onclick="searchContact();">search</button>
+							<!---	<button type="button" class="btn btn-info btn-md" onclick="searchContact();">search</button>-->
 							</div>
 						</div>
 					</div>
@@ -85,6 +85,7 @@ $(document).ready(function(){
 						}*/
 					</script>
 					<div id="contactsTable"></div>
+					<ul id="contactsList"></ul>
 					
 <!--					<thead>
 						<tr>

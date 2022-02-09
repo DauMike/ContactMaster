@@ -423,12 +423,13 @@ function loadAllContacts()
 				var listContact = contactList.split(',');
 				console.log(listContact);
 				document.getElementsByTagName("p")[0].innerHTML = contactList;
-				var list = document.createElement("ol");
+				var list = document.createElement("ul");
 				for(let i of listContact)
 				{
 					let item = document.createElement("li");
 					item.innerHTML = i;
 					list.appendChild(item);
+					
 				}
 				document.getElementById("contactsList").appendChild(list);
 			}
