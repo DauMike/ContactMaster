@@ -99,26 +99,10 @@ function returnWithError( $err )
     $retValue = '{"firstName":"","lastName":"","error":"' . $err . '"}';
     sendResultInfoAsJson( $retValue );
 }
-/*
-function returnWithInfo( $searchResults )
-{
-    $retValue = '{"results":[' . $searchResults . ']}';
-    sendResultInfoAsJson( $retValue );
-
-}  
-
-function returnWithInfo( $firstName, $lastName, $Email, $Phone)
-{
-    $retValue = '{"firstname":"' . $firstName . '","lastname":"' . $lastName . '","email":"' . $Email . '","phone":"' . $Phone .'""}';
-    // $retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
- 
-    sendResultInfoAsJson( $retValue );
-} */
 
 function returnWithInfo( $firstNames, $lastNames, $emails, $phoneNumbers, $searchCount )
 {
     $retValue   = '{"contactCount": [' . $searchCount . '],"firstNames":[' . $firstNames . '],"lastNames":[' . $lastNames . '],"emails":[' . $emails . '],"phoneNumbers":[' . $phoneNumbers . ']}';
-//    $retValue = '{"firstNames": [' . $firstNames . ']}';
     sendResultInfoAsJson( $retValue );
 }
 

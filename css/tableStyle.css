@@ -79,7 +79,7 @@ tbody tr:hover td {
    margin-left: 90px;
   }
 
-.contactsList{
+#contactsList{
   display: list-item;    
   list-style-type: none;
  } 
