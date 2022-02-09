@@ -334,6 +334,7 @@ function searchContact()
 
 	if(srch === "")
 	{
+		contactsList = "";
 		return;
 	}
 	
@@ -361,11 +362,21 @@ function searchContact()
 					contactList += jsonObject.results[i];
 					if( i < jsonObject.results.length - 1 )
 					{
-						contactList += "<br />\r\n";
+						contactList += ",";
 					}
 				}
-				
+				//console.log(contactList);
+				var listContact = contactList.split(',');
+				console.log(listContact);
 				document.getElementsByTagName("p")[0].innerHTML = contactList;
+				var list = document.createElement("ol");
+				for(let i of listContact)
+				{
+					let item = document.createElement("li");
+					item.innerHTML = i;
+					list.appendChild(item);
+				}
+				document.getElementById("contactsList").appendChild(list);
 			}
 		};
 		xhr.send(jsonPayload);
@@ -374,8 +385,62 @@ function searchContact()
 	{
 		document.getElementById("contactSearchResult").innerHTML = err.message;
 	}
-	
 }
+
+function loadAllContacts()
+{
+	let srch = "";
+	document.getElementById("contactSearchResult").innerHTML = "";
+	
+	let contactList = "";
+
+	let tmp = {search:srch,userid:userId};
+	let jsonPayload = JSON.stringify( tmp );
+
+	let url = urlBase + '/Search.' + extension;
+	
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
+				let jsonObject = JSON.parse( xhr.responseText );
+				
+				for( let i=0; i<jsonObject.results.length; i++ )
+				{
+					contactList += jsonObject.results[i];
+					if( i < jsonObject.results.length - 1 )
+					{
+						contactList += ",";
+					}
+				}
+				//console.log(contactList);
+				var listContact = contactList.split(',');
+				console.log(listContact);
+				document.getElementsByTagName("p")[0].innerHTML = contactList;
+				var list = document.createElement("ol");
+				for(let i of listContact)
+				{
+					let item = document.createElement("li");
+					item.innerHTML = i;
+					list.appendChild(item);
+				}
+				document.getElementById("contactsList").appendChild(list);
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("contactSearchResult").innerHTML = err.message;
+	}
+}
+
 
 function deleteContact() {
 	let phn = document.getElementById("phoneText").value;
