@@ -9,7 +9,7 @@
 	$Email = $inData["email"];
 	$Phone = $inData["phone"];
 
-	$conn = new mysqli("localhost", "student", "studyhard", "COP4331");
+	$conn = db_connection();
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
@@ -18,10 +18,14 @@
 	{
 		$stmt = $conn->prepare("INSERT INTO Contacts (FirstName, LastName, Email, Phone, UserID) VALUES (?,?,?,?,?);");
 		$stmt->bind_param("sssss", $FirstName, $LastName, $Email, $Phone, $UserID);
-		$stmt->execute();
+		$flag = $stmt->execute();
+		$id = -1;
+		if($flag) {
+			$id = $conn->insert_id;
+		}
 		$stmt->close();
 		$conn->close();
-		echo json_encode("Contact created! Please Enjoy!");
+		echo json_encode(array("newId" => $id));//("Contact created! Please Enjoy!");
 	}
 
 ?>

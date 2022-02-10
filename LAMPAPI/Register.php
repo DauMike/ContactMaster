@@ -1,49 +1,50 @@
 <?php
-include 'Functions.php';
+	include 'Functions.php';
 
-$mysqli = new mysqli("localhost","student","studyhard","COP4331");
-$inData = getRequestInfo();
+	$conn = db_connection();
+	$inData = getRequestInfo();
+    $firstName = $inData["firstname"];
+	$lastName = $inData["lastname"];
+	$login = $inData["login"];
+    $password = $inData["password"]; 
+    
+    if(mysqli_connect_errno())
+    {
+        returnWithError($mysqli->connect_error);
+    }
+    else
+    {
+        if(!isset($firstName, $lastName, $login, $password))
+        {
+            exit('Please complete the registration form!');
+        }
+        if(empty($firstName) || empty($lastName) || empty($login) || empty($password))
+        {
+            exit('Please complete the registration form!');
+        }
 
-$FirstName = $inData["firstname"];
-$LastName = $inData["lastname"];
-$Login = $inData["login"];
-$Password = $inData["password"];
+        if($stmt = $conn->prepare("SELECT ID, Password FROM Users WHERE Login=?"))//if($stmt = $mysqli->prepare("SELECT ID, Password FROM Users WHERE Login=?"))
+        {
+            $stmt->bind_param("s", $login);
+            $stmt->execute();
+            $stmt->store_result();
 
+            if($stmt->num_rows > 0)
+            {
+                returnWithError("Username exists already! Please select another one!"); 
+            }
+            else
+            {
+                $stmt = /*$mysqli*/$conn->prepare("INSERT INTO Users (FirstName, LastName, Login, Password) VALUES (?, ?, ?, ?);");
+		        $stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
+		        $stmt->execute();
 
-// Check connection
-if ($mysqli->connect_error) 
-{
-	ReturnWithError($mysqli->connect_error);
-}
-else
-{
-	// Perform query
-	if ($result = $mysqli->query("SELECT * FROM Users WHERE Login='$login';")) 
-  {
-		if($result->num_rows > 0)
-		{
-			returnWithError("Username exists already! Please select another one!");
-      		}
-		else
-		{
-			$stmt = $mysqli->prepare("INSERT INTO Users (FirstName, LastName, Login, Password) VALUES (?, ?, ?, ?);");
-			$stmt->bind_param("ssss", $FirstName, $LastName, $Login, $Password);
-			$stmt->execute();
-			#returnWithInfo(1);
+                echo json_encode("User created! Please Enjoy!");
+            }
 
-			echo json_encode("Registration Complete!");
+            $stmt->close();
+        }
 
-		}
-      
-		// Free result set
-		$result -> free_result();
-	}
-	else
-	{
-		returnWithError($mysqli->error);
-	} 
-
-	$stmt->close();
-	$mysqli->close();
-}
+        $conn->close();//$mysqli->close();
+    }
 ?>

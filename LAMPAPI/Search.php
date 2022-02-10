@@ -1,10 +1,15 @@
 <?php
-	
+   include "Functions.php";
    $inData = getRequestInfo();
-  
+
    $searchResults = "";
    $searchCount = 0;
- 
+   $cIds = "";
+   $firstNames = "";
+   $lastNames = "";
+   $emails = "";
+   $phoneNumbers = "";
+  
    $conn = new mysqli("localhost", "student", "studyhard", "COP4331");
    if ($conn->connect_error)
    {
@@ -12,22 +17,36 @@
    }
    else
    {
-       $stmt = $conn->prepare("SELECT FirstName, LastName FROM Contacts WHERE CONCAT_WS(' ',FirstName,LastName) LIKE ? AND UserID=?");
-       $Name = "%" . $inData["search"] . "%";
-       $stmt->bind_param("ss", $Name, $inData["userid"]);
-       $stmt->execute();
-     
-       $result = $stmt->get_result();
-     
+       $stmt = $conn->prepare("SELECT id, FirstName, LastName , Email, Phone FROM Contacts WHERE FirstName LIKE ? AND LastName LIKE ? AND Email LIKE ? AND Phone LIKE ? AND UserID = ?");
+       $sfirstName = "%" . $inData["firstName"] . "%";
+       $slastName = "%" . $inData["lastName"] . "%";
+       $semail = "%" . $inData["email"] . "%";
+       $sphone = "%" . $inData["phoneNumber"] . "%";
+       $stmt->bind_param("sssss", $sfirstName, $slastName, $semail, $sphone, $inData["userid"]);
+       $stmt->execute();              
+    
+       $result = $stmt->get_result();     
        while($row = $result->fetch_assoc())
        {
-           if( $searchCount > 0 )
-           {
-               $searchResults .= ",";
-           }
-           $searchCount++;
-           $searchResults .= '"'.$row["FirstName"] . ' ' . $row["LastName"] .'"';
+            if( $searchCount > 0 )
+            {
+                $cIds .= ",";
+                $firstNames .= ",";
+                $lastNames .= ",";
+                $emails .= ",";
+                $phoneNumbers .= ",";
+
+            }
+            $searchCount++;
+            $cIds .= '"'.$row["id"].'"';
+            $firstNames .= '"'.$row["FirstName"] .'"';
+            $lastNames .= '"'.$row["LastName"] .'"';
+            $emails .= '"'.$row["Email"] .'"';
+            $phoneNumbers .= '"'.$row["Phone"] .'"';
        }
+
+       $stmt->close();
+	   $conn->close();
       
        if( $searchCount == 0 )
        {
@@ -35,35 +54,8 @@
        }
        else
        {
-           returnWithInfo( $searchResults );
+            returnWithInfo( $cIds, $firstNames, $lastNames, $emails, $phoneNumbers, $searchCount );
+           //returnWithInfo( $searchResults );
        }
-      
-       $stmt->close();
-
-	   $conn->close();
    }
-
-   function getRequestInfo()
-   {
-       return json_decode(file_get_contents('php://input'), true);
-   }
- 
-   function sendResultInfoAsJson( $obj )
-   {
-       header('Content-type: application/json');
-       echo $obj;
-   }
-  
-   function returnWithError( $err )
-   {
-       $retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
-       sendResultInfoAsJson( $retValue );
-   }
-  
-   function returnWithInfo( $searchResults )
-   {
-       $retValue = '{"results":[' . $searchResults . '],"error":""}';
-       sendResultInfoAsJson( $retValue );
-   }
-
 ?>
