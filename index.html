@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Contact Depot </title>
+  <title>Login Page </title>
   <script type="text/javascript" src="js/md5.js"></script>
   <script type="text/javascript" src="js/code.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -26,7 +26,9 @@
 	
 		<div class="right">
 		<h5>Login</h5>
-		<subtitle1>Don't have an account? <a href="register.html" target="_blank">Create Your Account</a> It takes less than a minute.</subtitle1>
+		<p>Don't have an account? <a href="register.html">Create Your Account</a> It takes less than a minute.</p><!-- target="_blank"-->
+		
+		<!---"onclick="myFunction();"--->
 
 		<div class="inputs">
 			<!--<label for="loginName"><b>Username</b></label>
@@ -41,50 +43,28 @@
 			<input type="password" id="loginPassword" name="loginPassword" placeholder="password">
 		</div>
 			
-			<br><br>			
+			<br><br>
+			
+		<div class="remember-me--forgot-password">
+				<!-- Angular -->
+	<!--			
+	<label>
+		<input type="checkbox" name="item" checked/>
+		<span class="text-checkbox">Remember me</span>
+	</label>
+	
+			<p>forgot password?</p>-->
+		</div>
+			
 			<br>
 			
 			<button type="submit" id="loginButton" class="buttons" onclick="doLogin();">Login</button>
 			<br>
 			<span id="loginResult"></span>
-			<br><br><br>
 	</div>
+	
 </div>
-
-<br><br><br><br>
-
-<div class="box-form">
-	<div class="left">
-	  <div class="overlay">
-		<h1>Welcome To Contact Depot</h1>
-		<h2>Create your new account today!</h2>
-	  </div>
-	</div>
-
-	<div class="right">
-	  <h5>Register</h5>
-	  <subtitle1>Already have an account? <a href="index.html">Login</a> </subtitle1>
-	  
-	  <div class="inputs">
-		<b>Please fill out the form below.</b>
-		<input type="text" id="firstname" name="firstname" placeholder="first name">
-		<br>
-		<input type="text" id="lastname" name="lastname" placeholder="last name">
-		<br>
-		<input type="text" id="login" name="login" placeholder="username">
-		<br>
-		<input type="password" id="password" name="password" placeholder="password">
-	  </div>
+<!-- partial -->
   
-	  <div>
-		<br><br>
-		<button type="button" id="newUserButton" class="buttons" onclick="addUser();" >Submit</button>
-		<br>
-		<span id="newUserResult"></span>
-	  </div>
-	</div>
-  </div>
-
-<!-- partial -->  
 </body>
 </html>
