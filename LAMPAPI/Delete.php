@@ -5,33 +5,25 @@ include 'Functions.php';
 $inData = getRequestInfo();
 
 $UserID = $inData["userid"];
-$Phone = $inData["phone"];
+$CIDs = $inData["cIds"];
 
-$conn = new mysqli("localhost", "student", "studyhard", "COP4331");
+$conn = db_connection();
 
-if($conn->connection_error)
+if($conn->connect_error)
 {
-	returnWithError($conn->connection_error);
+	returnWithError($conn->connect_error);
 }
 else
 {
-	if($result = $conn->query("SELECT * FROM Contacts WHERE Phone='$Phone';"))
-	{
-		if($result->num_rows == 0)
-		{
-			returnWithError("Contact does not exist!");
-		}
-		else
-		{
-			$stmt = $conn->prepare("DELETE FROM Contacts Where Phone=? ");
-			$stmt->bind_param("s", $Phone);
-			$stmt->execute();
-
-			$stmt->close();
-			$conn->close();
-			echo json_encode("Contact deleted!!");
-
-		}
-	}
+	$stmt = $conn->prepare("DELETE FROM Contacts Where UserID=? AND ? LIKE CONCAT('%,', id, ',%')");
+	$stmt->bind_param("ss", $UserID, $CIDs);		
+	$flag = $stmt->execute();		
+	$stmt->close();
+	
+	$conn->close();
+	if(!$flag)
+		returnWithError("Deleting failed!");
+	else		
+		echo json_encode("Contact deleted!!");		
 }
 ?>

@@ -16,7 +16,8 @@
    }
    else
    {
-       $stmt = $conn->prepare("SELECT ID, FirstName, LastName, Email, Phone FROM Contacts WHERE CONCAT_WS(' ',FirstName,LastName) LIKE ? AND UserID=?");
+       $stmt = $conn->prepare("SELECT ID, FirstName, LastName, Email, Phone FROM Contacts WHERE CONCAT_WS(' ',FirstName,LastName,Email,Phone) LIKE ? AND UserID=?");
+     //$stmt = $conn->prepare("SELECT id, FirstName, LastName , Email, Phone FROM Contacts WHERE FirstName LIKE ? AND LastName LIKE ? AND Email LIKE ? AND Phone LIKE ? AND UserID = ?");
        $Name = "%" . $inData["search"] . "%";
        $stmt->bind_param("ss", $Name, $inData["userid"]);
        $stmt->execute();
@@ -73,7 +74,7 @@
   
    function returnWithInfo( $ID, $firstNames, $lastNames, $emails, $phoneNumbers, $searchCount )
    {
-    $retValue   = '{"contactCount": [' . $searchCount . '],"cId":[' . $ID . '],"firstNames":[' . $firstNames . '],"lastNames":[' . $lastNames . '],"emails":[' . $emails . '],"phoneNumbers":[' . $phoneNumbers . ']}';
+    $retValue   = '{"contactCount": [' . $searchCount . '],"cid":[' . $ID . '],"firstNames":[' . $firstNames . '],"lastNames":[' . $lastNames . '],"emails":[' . $emails . '],"phoneNumbers":[' . $phoneNumbers . ']}';
     sendResultInfoAsJson( $retValue );
     }
 

@@ -1,7 +1,7 @@
 <?php
 	include 'Functions.php';
 
-	$mysqli = mysqli_connect("localhost","student","studyhard","COP4331");
+	$conn = db_connection();
 	$inData = getRequestInfo();
     $firstName = $inData["firstname"];
 	$lastName = $inData["lastname"];
@@ -23,7 +23,7 @@
             exit('Please complete the registration form!');
         }
 
-        if($stmt = $mysqli->prepare("SELECT ID, Password FROM Users WHERE Login=?"))
+        if($stmt = $conn->prepare("SELECT ID, Password FROM Users WHERE Login=?"))//if($stmt = $mysqli->prepare("SELECT ID, Password FROM Users WHERE Login=?"))
         {
             $stmt->bind_param("s", $login);
             $stmt->execute();
@@ -35,7 +35,7 @@
             }
             else
             {
-                $stmt = $mysqli->prepare("INSERT INTO Users (FirstName, LastName, Login, Password) VALUES (?, ?, ?, ?);");
+                $stmt = /*$mysqli*/$conn->prepare("INSERT INTO Users (FirstName, LastName, Login, Password) VALUES (?, ?, ?, ?);");
 		        $stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
 		        $stmt->execute();
 
@@ -45,6 +45,6 @@
             $stmt->close();
         }
 
-        $mysqli->close();
+        $conn->close();//$mysqli->close();
     }
 ?>
